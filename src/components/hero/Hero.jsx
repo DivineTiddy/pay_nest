@@ -32,7 +32,7 @@ const Hero = () => {
           </div>
           <div className="flex items-start mt-10 md:mt-20 gap-3 ">
             <LazyLoadImage
-              src="public\image\registerUser.svg"
+              src="\image\registerUser.svg"
               alt="icon"
               className="w-25 md:w-30 "
             />
