@@ -1,5 +1,4 @@
 import React from "react";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from "react-router-dom";
 import {  Element } from 'react-scroll';
 
@@ -21,7 +20,7 @@ const Intro = () => {
             Get Account
           </Link>
         </div>
-        <LazyLoadImage src="\image\image1.svg" alt="image" className="w-full md:w-[50%]" />
+        <img src="\image\image1.svg" alt="image" className="w-full md:w-[50%]" />
       </div>
       {/* frame 2 */}
       <div className="space-y-10 md:flex-row-reverse md:flex  justify-center items-center md:gap-10">
@@ -37,7 +36,7 @@ const Intro = () => {
             Get Account
           </Link>
         </div>
-        <LazyLoadImage src="\image\image2.svg" alt="image" className="w-full md:w-[50%]" />
+        <img src="\image\image2.svg" alt="image" className="w-full md:w-[50%]" />
       </div>
     </Element >
   );

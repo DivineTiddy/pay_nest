@@ -11,7 +11,7 @@ const HomeNav = () => {
           Login
         </Link>
         <img
-          src="\public\icon\burger.svg"
+          src="\icon\burger.svg"
           alt="icon"
           className="w-9 md:w-12  cursor-pointer"
         />

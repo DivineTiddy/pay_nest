@@ -54,7 +54,7 @@ const FAQ = () => {
           questions not listed here, then reach out to us through the contact us
           page.
         </p>
-        <div className="flex justify-between items-center mt-10  ">
+        <div className="flex justify-between gap-2 md:gap-0 items-center mt-10  ">
           {data.map((item, index) => (
             <button
               key={index + 1}
