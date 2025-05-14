@@ -6,7 +6,7 @@ const HomeNav = () => {
   return (
     <div className=" w-[100%] font-inter  flex items-center justify-between py-2 md:py-4 px-3 md:px-6 bg-[#2A2A2A] rounded-2xl mt-5">
       <img src="\image\payNestLogo.svg" alt="logo" className="w-9 md:w-12" />
-      <div className="md:hidden flex items-center">
+      <div className="lg:hidden flex items-center">
         <Link to="/login" className="px-7 py-3 text-[#EAEAEA] cursor-pointer">
           Login
         </Link>
