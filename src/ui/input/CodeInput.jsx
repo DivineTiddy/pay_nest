@@ -1,7 +1,6 @@
 import React from "react";
 
 const CodeInput = ({ value, onChange }) => {
-  console.log(value); // e.g., "      "
   return (
     <input
       type="number"
