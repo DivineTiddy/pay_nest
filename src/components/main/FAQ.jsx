@@ -59,7 +59,7 @@ const FAQ = () => {
             <button
               key={index + 1}
               onClick={() => setClick(index + 1)}
-              className={`border-[1px] hover:border-[#474ED3] hover:text-[#474ED3] duration-300 ease-in-out  cursor-pointer font-bold font-inter rounded-full py-2 md:py-3 px-4.5 text-[10px] md:text-xs ${
+              className={`border-[1px] hover:border-[#474ED3] hover:text-[#474ED3] duration-300 ease-in-out  cursor-pointer font-bold font-inter rounded-full py-2 md:py-3 px-4.5 text-[8px] md:text-xs ${
                 click == index + 1
                   ? "border-[#474ED3] text-[#474ED3]"
                   : " border-[#DADADA] text-[#AEAEAE]"
