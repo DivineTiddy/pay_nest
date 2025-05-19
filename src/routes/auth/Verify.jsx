@@ -9,11 +9,13 @@ import {
 } from "@/components/ui/input-otp";
 import { verification } from "@/hooks/auth";
 import Loarder from "@/ui/loader/Loarder";
+import { getCookie } from "@/manager/cookies";
 
 const Verify = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [otp, setOtp] = useState("");
   const navigate = useNavigate();
+  const email = getCookie();
 
   const codeSubmit = async (e) => {
     e.preventDefault();
@@ -50,7 +52,7 @@ const Verify = () => {
           Verify Your Email
         </h1>
         <p className="text-[#767676] font-normal text-base mt-3 text-center">
-          Enter the six(6) digit code sent to abcxxx@gmail.com
+          Enter the six(6) digit code sent to {email}
         </p>
 
         <div className="flex gap-4 mt-5">
@@ -60,9 +62,9 @@ const Verify = () => {
             value={otp}
             onChange={(val) => setOtp(val)}
           >
-            <InputOTPGroup>
+            <InputOTPGroup className="gap-2">
               {Array.from({ length: 6 }).map((_, i) => (
-                <InputOTPSlot key={i} index={i} />
+                <InputOTPSlot className="border-[1px] border-[#DBDBDB] rounded-[8px]" key={i} index={i} />
               ))}
             </InputOTPGroup>
           </InputOTP>
