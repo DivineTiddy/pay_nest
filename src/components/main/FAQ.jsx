@@ -88,13 +88,13 @@ const FAQ = () => {
             }`}
           >
             <AccordionTrigger
-              className={`py-4 cursor-pointer font-semibold text-base ${
+              className={`py-4 cursor-pointer font-semibold text-sm md:text-base ${
                 openAccordion == index + 1 ? "text-[#474ED3]" : ""
               }`}
             >
               {items.title}
             </AccordionTrigger>
-            <AccordionContent>{items.describetion}</AccordionContent>
+            <AccordionContent className="text-xs md:text-sm">{items.describetion}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
