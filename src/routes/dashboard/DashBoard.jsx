@@ -1,5 +1,6 @@
 import Balance_ui from "@/components/dashboard/Balance_ui";
 import Categories from "@/components/dashboard/Categories";
+import Transaction from "@/components/dashboard/Transaction";
 import { TopDashBoardNav } from "@/components/nav/DashBoardNav";
 import React from "react";
 
@@ -9,6 +10,7 @@ const DashBoard = () => {
       <TopDashBoardNav />
       <Balance_ui />
       <Categories/>
+      <Transaction/>
     </div>
   );
 };

@@ -57,7 +57,7 @@ const Categories = () => {
           className="flex flex-col items-center justify-start gap-4 cursor-pointer"
         >
           <div
-            className={`${item.color} rounded-[10px] p-5 flex items-center justify-center`}
+            className={`${item.color} rounded-[10px] p-3 flex items-center justify-center`}
           >
             <img src={item.icon} alt="icong" />
           </div>

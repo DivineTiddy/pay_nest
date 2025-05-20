@@ -12,6 +12,15 @@ export const registration = async (credential) => {
   return data;
 };
 
+export const login = async (credential) => {
+  const { data } = await axios.post(`${API_URL}/login`, credential, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return data;
+};
+
 export const verification = async (code) => {
   const email = getCookie();
 

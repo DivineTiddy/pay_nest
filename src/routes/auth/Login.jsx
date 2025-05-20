@@ -1,11 +1,56 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { Eye, EyeOff } from "lucide-react"; // Lucide icon library
+import { login } from "@/hooks/auth";
+import { toast, Zoom } from "react-toastify";
+import Loarder from "@/ui/loader/Loarder";
 
 const Login = () => {
+  const [showBalance, setShowBalance] = useState(false);
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
   const { register, handleSubmit, watch } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      setIsLoading(true);
+
+      await login(data);
+      toast.success("Login successfully", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Zoom,
+      });
+      navigate("/dashboard");
+    } catch (error) {
+      const { response } = error;
+
+      toast.error(`${response.data.error}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Zoom,
+      });
+      if (
+        response.data.error === "Please verify your email before logging in"
+      ) {
+        navigate("/verify");
+      }
+    } finally {
+      setIsLoading(false);
+    }
   };
   const email = watch("email");
   const password = watch("password");
@@ -38,22 +83,39 @@ const Login = () => {
                 }`}
               />
             </div>
-            <div className="flex flex-col  gap-2">
+            <div className="flex flex-col gap-2">
               <label>Password</label>
-              <input
-                {...register("password", { required: true })}
-                type="text"
-                placeholder="xxxxxxxxxxxxx"
-                className={`duration-300 ease-in-out border-[1px] text-[#2B2B2B] rounded-[8px] outline-0 py-3.5 px-4 ${
+              <div
+                className={`flex items-center gap-1 duration-300 ease-in-out border-[1px] text-[#2B2B2B] rounded-[8px] px-4 ${
                   password ? "border-[#474ED3]" : "border-[#DBDBDB]"
                 }`}
-              />
-              <Link className="text-end underline ">Forgot password?</Link>
+              >
+                <input
+                  {...register("password", { required: true })}
+                  type={showBalance ? "text" : "password"}
+                  placeholder="xxxxxxxxxxxxx"
+                  className="w-full outline-0 py-3.5"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowBalance((prev) => !prev)}
+                  className="text-[#949494]"
+                  aria-label="Toggle password visibility"
+                >
+                  {showBalance ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
+              </div>
+              <Link className="text-end underline">Forgot password?</Link>
             </div>
           </div>
         </div>
-        <button className="bg-[#474ED3] text-[#F0F1FF] mt-10 py-4 rounded-[8px] w-full font-inter text-base font-normal cursor-pointer">
-          Login
+        <button
+          type="submit"
+          className={`${
+            isLoading ? " cursor-not-allowed " : " cursor-pointer"
+          } text-[#F0F1FF] bg-[#474ED3] flex justify-center items-center py-4 rounded-[8px] w-full text-center text-base font-normal `}
+        >
+          {isLoading ? <Loarder /> : "Login"}
         </button>
         <span className="text-base font-normal text-center mt-10">
           Don’t have an account?
