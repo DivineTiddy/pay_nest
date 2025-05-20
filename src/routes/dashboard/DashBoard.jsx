@@ -8,7 +8,7 @@ import React from "react";
 
 const DashBoard = () => {
   return (
-    <div className="bg-[#F5F5F5] h-full w-full ">
+    <div className="bg-[#F5F5F5] h-screen overflow-scroll w-full ">
       <TopDashBoardNav />
       <Balance_ui />
       <Categories />

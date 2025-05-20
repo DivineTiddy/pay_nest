@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { TrendingUp } from "lucide-react"
-import { Label, Pie, PieChart } from "recharts"
+import * as React from "react";
+import { TrendingUp } from "lucide-react";
+import { Label, Pie, PieChart } from "recharts";
 
 import {
   Card,
@@ -11,19 +11,19 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 287, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 190, fill: "var(--color-other)" },
-]
+  { browser: "chrome", visitors: 275, fill: "#CA6720" },
+  { browser: "safari", visitors: 200, fill: "#D5C944" },
+  { browser: "firefox", visitors: 487, fill: "#9094E8" },
+  { browser: "edge", visitors: 173, fill: "#333C04" },
+  { browser: "other", visitors: 190, fill: "#D22363" },
+];
 const chartConfig = {
   visitors: {
     label: "Visitors",
@@ -48,17 +48,15 @@ const chartConfig = {
     label: "Other",
     color: "hsl(var(--chart-5))",
   },
-}
-
+};
 
 export function AnalysisChart() {
   const totalVisitors = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.visitors, 0)
-  }, [])
+    return chartData.reduce((acc, curr) => acc + curr.visitors, 0);
+  }, []);
 
   return (
     <Card className="flex flex-col">
-     
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
@@ -88,20 +86,20 @@ export function AnalysisChart() {
                       >
                         <tspan
                           x={viewBox.cx}
+                          y={(viewBox.cy || 0) + 24}
+                          className="fill-muted-foreground font-inter text-xs font-normal text-[#767676]"
+                        >
+                          Transactions
+                        </tspan>
+                        <tspan
+                          x={viewBox.cx}
                           y={viewBox.cy}
                           className="fill-foreground text-3xl font-bold"
                         >
                           {totalVisitors.toLocaleString()}
                         </tspan>
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground"
-                        >
-                          Visitors
-                        </tspan>
                       </text>
-                    )
+                    );
                   }
                 }}
               />
@@ -109,7 +107,6 @@ export function AnalysisChart() {
           </PieChart>
         </ChartContainer>
       </CardContent>
-     
     </Card>
-  )
+  );
 }

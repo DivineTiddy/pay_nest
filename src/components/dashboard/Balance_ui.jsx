@@ -5,7 +5,7 @@ const Balance_ui = () => {
   const [showBalance, setShowBalance] = useState(false);
 
   return (
-    <div className="bg-[#FDFDFF] p-4 w-full mt-4 font-inter">
+    <div className="bg-[#FDFDFF] p-4 w-full mt-20 font-inter">
       <span className=" space-y-2">
         <p className="text-xs text-[#767676] font-medium">Hello, Ocean</p>
         <h1 className="text-lg text-[#2B2B2B] font-semibold">Welcome back</h1>
