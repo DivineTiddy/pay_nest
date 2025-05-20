@@ -17,7 +17,7 @@ const TransactionCard = (e) => {
       </div>
       <div className="flex flex-col gap-2 items-end">
         <p className={`${e.type === "income" ? "text-[#379216]" : "text-[#D41818]"} text-sm font-semibold tracking-[0.5px]`}>
-          - {e.amount}
+          {e.type === "income" ? "+":"-"} {e.amount}
         </p>
         <div className="bg-[#F3F3F3] py-1.5 px-3 rounded-[32px]">
           <p className="font-normal text-xs tracking-[0.5px]">Successful</p>
