@@ -13,26 +13,26 @@ const Analysis = () => {
           <option>Last Month</option>
         </select>
         <AnalysisChart />
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
           <span className="flex items-center gap-2">
-            <Circle width={15} height={15} fill="#9094E8" color="#9094E8" />
-            <p className="text-[#767676] font-inter font-normal text-base">Transfer</p>
+            <Circle width={12} height={12} fill="#9094E8" color="#9094E8" />
+            <p className="text-[#767676] font-inter font-normal text-xs">Transfer</p>
           </span>
           <span className="flex items-center gap-2">
-            <Circle width={15} height={15} fill="#CA6720" color="#CA6720" />
-            <p className="text-[#767676] font-inter font-normal text-base">Transfer</p>
+            <Circle width={12} height={12} fill="#CA6720" color="#CA6720" />
+            <p className="text-[#767676] font-inter font-normal text-xs">Data Bundle</p>
           </span>
           <span className="flex items-center gap-2">
-            <Circle width={15} height={15} fill="#333C04" color="#333C04" />
-            <p className="text-[#767676] font-inter font-normal text-base">Transfer</p>
+            <Circle width={12} height={12} fill="#333C04" color="#333C04" />
+            <p className="text-[#767676] font-inter font-normal text-xs">Airtime</p>
           </span>
           <span className="flex items-center gap-2">
-            <Circle width={15} height={15} fill="#D22363" color="#D22363" />
-            <p className="text-[#767676] font-inter font-normal text-base">Transfer</p>
+            <Circle width={12} height={12} fill="#D22363" color="#D22363" />
+            <p className="text-[#767676] font-inter font-normal text-xs">Electricity</p>
           </span>
           <span className="flex items-center gap-2">
-            <Circle width={15} height={15} fill="#D5C944" color="#D5C944" />
-            <p className="text-[#767676] font-inter font-normal text-base">Transfer</p>
+            <Circle width={12} height={12} fill="#D5C944" color="#D5C944" />
+            <p className="text-[#767676] font-inter font-normal text-xs">TV Subscription</p>
           </span>
         </div>
       </div>

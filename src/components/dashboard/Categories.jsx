@@ -50,14 +50,14 @@ const items = [
 
 const Categories = () => {
   return (
-    <div className="bg-[#FDFDFF] p-4 w-full mt-4 font-inter flex justify-between">
+    <div className="bg-[#FDFDFF] p-4 w-full mt-4 md:mt-0 font-inter flex justify-between">
       {items.map((item, index) => (
         <div
           key={index + 1}
           className="flex flex-col items-center justify-start gap-4 cursor-pointer"
         >
           <div
-            className={`${item.color} rounded-[10px] p-3 flex items-center justify-center`}
+            className={`${item.color} rounded-[10px] p-4 flex items-center justify-center`}
           >
             <img src={item.icon} alt="icong" />
           </div>
