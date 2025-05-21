@@ -5,19 +5,19 @@ const Balance_ui = () => {
   const [showBalance, setShowBalance] = useState(false);
 
   return (
-    <div className="bg-[#FDFDFF] lg:p-0 p-4 w-full font-inter">
+    <div className="bg-[#FDFDFF] lg:p-0 p-4 w-full font-inter lg:mt-8">
       <span className=" space-y-2">
-        <p className="text-xs text-[#767676] font-medium">Hello, Ocean</p>
-        <h1 className="text-lg text-[#2B2B2B] font-semibold">Welcome back</h1>
+        <p className="text-xs text-[#767676] font-medium lg:text-lg">Hello, Ocean</p>
+        <h1 className="text-lg text-[#2B2B2B] font-semibold lg:text-2xl">Welcome back</h1>
       </span>
-      <div className="bg-[#474ED3] border-[1px] border-[#E9E9E9] px-6 py-4 rounded-[16px] mt-4">
+      <div className="bg-[#474ED3] border-[1px] border-[#E9E9E9] px-6 py-4 lg:py-8 lg:px-10 rounded-[20px] mt-4 lg:mt-7">
         <div className="flex justify-between items-center">
           <span>
-            <p className="font-normal text-xs text-[#E2E3FF]">
+            <p className="font-normal text-xs text-[#E2E3FF] lg:text-base">
               Available balance
             </p>
             {showBalance ? (
-              <h1 className="font-bold text-2xl text-[#E8E9FF]">
+              <h1 className="font-bold text-2xl text-[#E8E9FF] lg:text-3xl lg:mt-5 lg:tracking-wide">
                 NGN 1,200,455{" "}
                 <span className="text-[#E2E3FF] font-normal">.00</span>{" "}
               </h1>
@@ -35,9 +35,9 @@ const Balance_ui = () => {
           </button>
         </div>
         <span className="flex flex-col gap-1.5 mt-7">
-          <p className="font-normal text-xs text-[#E2E3FF]">Account Number</p>
+          <p className="font-normal text-xs text-[#E2E3FF] lg:text-base">Account Number</p>
           <span className="flex items-center gap-2">
-            <h1 className="font-normal text-base tracking-[3px] text-[#E2E3FF]">
+            <h1 className="font-normal text-base tracking-[3px] lg:tracking-[7px] text-[#E2E3FF]">
               2174740175{" "}
             </h1>
             <img

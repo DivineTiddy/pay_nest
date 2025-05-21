@@ -4,7 +4,7 @@ const items = [
   {
     title: (
       <>
-        Send <br /> Money
+        Send <br className="lg:hidden" /> Money
       </>
     ),
     color: "bg-[#EBECFF]",
@@ -13,7 +13,7 @@ const items = [
   {
     title: (
       <>
-        Get <br /> Loan
+        Get <br className="lg:hidden" /> Loan
       </>
     ),
     color: "bg-[#FFF0F2]",
@@ -22,7 +22,7 @@ const items = [
   {
     title: (
       <>
-        Electricity <br /> Bills
+        Electricity <br className="lg:hidden" /> Bills
       </>
     ),
     color: "bg-[#F9E9FF]",
@@ -31,7 +31,7 @@ const items = [
   {
     title: (
       <>
-        Data <br /> Bundles
+        Data <br className="lg:hidden" /> Bundles
       </>
     ),
     color: "bg-[#FFF2E9]",
@@ -40,7 +40,7 @@ const items = [
   {
     title: (
       <>
-        Airtime <br /> TopUp
+        Airtime <br className="lg:hidden" /> TopUp
       </>
     ),
     color: "bg-[#EFFFF0]",
@@ -50,18 +50,18 @@ const items = [
 
 const Categories = () => {
   return (
-    <div className="bg-[#FDFDFF] p-4 w-full mt-4 md:mt-0 font-inter flex justify-between">
+    <div className="bg-[#FDFDFF] p-4 w-full mt-4 md:mt-0 font-inter flex justify-between lg:mt-10">
       {items.map((item, index) => (
         <div
           key={index + 1}
           className="flex flex-col items-center justify-start gap-4 cursor-pointer"
         >
           <div
-            className={`${item.color} rounded-[10px] p-4 flex items-center justify-center`}
+            className={`${item.color} rounded-[10px] p-4 lg:p-6 flex items-center justify-center`}
           >
             <img src={item.icon} alt="icong" />
           </div>
-          <p className="text-[#2B2B2B] text-xs font-normal text-center">
+          <p className="text-[#2B2B2B] text-xs lg:text-base font-normal text-center">
             {item.title}
           </p>
         </div>

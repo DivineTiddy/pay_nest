@@ -6,13 +6,13 @@ const SideNav = () => {
   const getColor = (name) => (active === name ? "#474ED3 " : "#949494");
 
   return (
-    <div className="hidden lg:flex flex-col lg:col-span-1 font-inter bg-[#F8F8FF] px-3 ">
+    <div className="hidden h-full  lg:flex flex-col lg:col-span-1 font-inter bg-[#F8F8FF] px-3 py-8 rounded-lg ">
       <div className="flex items-center gap-1.5">
         <img src="/image/payNestLogo.svg" alt="logo" className="w-9 md:w-12" />
-        <h1 className="text-[#474ED3] text-2xl font-bold">PayNest</h1>
+        <h1 className="text-[#474ED3] text-[28px] font-bold">PayNest</h1>
       </div>
 
-      <div className="flex flex-col gap-5 font-semibold text-base mt-9">
+      <div className="flex flex-col gap-6 font-semibold text-[20px] mt-16">
         {/* Dashboard */}
         <button
           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
