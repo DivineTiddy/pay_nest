@@ -18,11 +18,11 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 const chartData = [
-  { browser: "chrome", visitors: 275, fill: "#CA6720" },
-  { browser: "safari", visitors: 200, fill: "#D5C944" },
-  { browser: "firefox", visitors: 487, fill: "#9094E8" },
-  { browser: "edge", visitors: 173, fill: "#333C04" },
-  { browser: "other", visitors: 190, fill: "#D22363" },
+  { browser: "chrome", visitors: 22275, fill: "#CA6720" },
+  { browser: "safari", visitors: 20450, fill: "#D5C944" },
+  { browser: "firefox", visitors: 43487, fill: "#9094E8" },
+  { browser: "edge", visitors: 56173, fill: "#333C04" },
+  { browser: "other", visitors: 19350, fill: "#D22363" },
 ];
 const chartConfig = {
   visitors: {
@@ -56,7 +56,7 @@ export function AnalysisChart() {
   }, []);
 
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col lg:shadow-none lg:border-0 lg:p-0 w-full ">
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
@@ -73,6 +73,7 @@ export function AnalysisChart() {
               nameKey="browser"
               innerRadius={60}
               strokeWidth={5}
+             
             >
               <Label
                 content={({ viewBox }) => {
@@ -87,7 +88,7 @@ export function AnalysisChart() {
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground font-inter text-xs font-normal text-[#767676]"
+                          className="fill-muted-foreground font-inter text-xs lg:text-base font-normal text-[#767676]"
                         >
                           Transactions
                         </tspan>

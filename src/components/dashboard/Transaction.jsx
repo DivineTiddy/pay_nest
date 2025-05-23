@@ -35,9 +35,9 @@ const data = [
 
 const Transaction = () => {
   return (
-    <div className="w-full p-4 flex flex-col gap-4 bg-[#FDFDFF] font-inter mt-5  lg:mt-0 ">
+    <div className="w-full p-4 lg:p-0 flex flex-col gap-4 bg-[#FDFDFF] font-inter mt-5  lg:mt-14 lg:hidden ">
       <div className="flex items-center justify-between">
-        <h1 className="font-semibold text-base text-[#242424]">
+        <h1 className="font-semibold text-base lg:text-[22px] text-[#242424]">
           Recent Transaction
         </h1>
         <Link className="font-normal text-xs underline">View all</Link>

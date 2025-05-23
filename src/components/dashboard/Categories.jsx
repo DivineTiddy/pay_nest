@@ -50,16 +50,16 @@ const items = [
 
 const Categories = () => {
   return (
-    <div className="bg-[#FDFDFF] p-4 w-full mt-4 md:mt-0 font-inter flex justify-between lg:mt-10">
+    <div className="bg-[#FDFDFF] p-4 lg:p-0 w-full mt-4 md:mt-0 font-inter flex justify-between lg:mt-12">
       {items.map((item, index) => (
         <div
           key={index + 1}
           className="flex flex-col items-center justify-start gap-4 cursor-pointer"
         >
           <div
-            className={`${item.color} rounded-[10px] p-4 lg:p-6 flex items-center justify-center`}
+            className={`${item.color} rounded-[10px] lg:rounded-2xl p-2 lg:p-4 flex items-center justify-center`}
           >
-            <img src={item.icon} alt="icong" />
+            <img src={item.icon} alt="icon" className="w-7 lg:w-10" />
           </div>
           <p className="text-[#2B2B2B] text-xs lg:text-base font-normal text-center">
             {item.title}
