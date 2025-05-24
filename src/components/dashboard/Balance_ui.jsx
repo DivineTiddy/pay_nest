@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react"; // Lucide icon library
+import { getCookie } from "@/manager/cookies";
 
 const Balance_ui = () => {
   const [showBalance, setShowBalance] = useState(false);
+  const {first_Name , balance} = getCookie();
 
   return (
     <div className="bg-[#FDFDFF] lg:p-0 p-4 w-full font-inter lg:mt-8">
       <span className=" space-y-2">
-        <p className="text-xs text-[#767676] font-medium lg:text-lg">Hello, Ocean</p>
+        <p className="text-xs text-[#767676] font-medium lg:text-lg">Hello, {first_Name}</p>
         <h1 className="text-lg text-[#2B2B2B] font-semibold lg:text-2xl">Welcome back</h1>
       </span>
       <div className="bg-[#474ED3] border-[1px] border-[#E9E9E9] lg:w-[75%] px-6 py-4 lg:py-8 lg:px-10 lg:rounded-[30px] rounded-[20px] mt-4 lg:mt-7">
@@ -18,7 +20,7 @@ const Balance_ui = () => {
             </p>
             {showBalance ? (
               <h1 className="font-bold text-2xl text-[#E8E9FF] lg:text-3xl lg:mt-5 lg:tracking-wide">
-                NGN 1,200,455{" "}
+                NGN {balance}
                 <span className="text-[#E2E3FF] font-normal">.00</span>{" "}
               </h1>
             ) : (

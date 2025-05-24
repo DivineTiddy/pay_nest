@@ -5,6 +5,7 @@ import { Eye, EyeOff } from "lucide-react"; // Lucide icon library
 import { login } from "@/hooks/auth";
 import { toast, Zoom } from "react-toastify";
 import Loarder from "@/ui/loader/Loarder";
+import { accessTokenCookie } from "@/manager/cookies";
 
 const Login = () => {
   const [showBalance, setShowBalance] = useState(false);
@@ -16,7 +17,9 @@ const Login = () => {
     try {
       setIsLoading(true);
 
-      await login(data);
+      const responses = await login(data);
+      accessTokenCookie(responses.accessToken);
+
       toast.success("Login successfully", {
         position: "top-right",
         autoClose: 5000,
