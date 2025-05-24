@@ -26,7 +26,7 @@ const Balance_ui = () => {
             {showBalance ? (
               <h1 className="font-bold text-2xl text-[#E8E9FF] lg:text-3xl lg:mt-5 lg:tracking-wide">
                {formattedAmount}
-                <span className="text-[#E2E3FF] font-normal">.00</span>{" "}
+                
               </h1>
             ) : (
               <h1 className="font-bold text-2xl text-[#E8E9FF]">******</h1>
