@@ -1,4 +1,3 @@
-import { useUser } from "@/context/userContext";
 import React from "react";
 import { format } from "date-fns";
 
@@ -39,7 +38,7 @@ import { format } from "date-fns";
 
 const TransactionRow = ({ item }) => {
   const isIncome =
-    item.transation_type === "income" || item.transation_type === "loan";
+    item.transation_type === "receive" || item.transation_type === "loan";
   const formatDateTime = (isoString) => {
     const date = new Date(isoString);
     const day = format(date, "do"); // '4th'
@@ -48,6 +47,8 @@ const TransactionRow = ({ item }) => {
     return { day, month, time };
   };
   const { day, month, time } = formatDateTime(item.createdAt);
+
+
   return (
     <>
       <div className="grid grid-cols-3 items-center  py-4 px-4 border-t-[1px] border-[#E6E6E6]  ">
@@ -66,11 +67,15 @@ const TransactionRow = ({ item }) => {
           </div>
           <div className="flex flex-col">
             <span className="text-[#242424] text-base tracking-wide">
-              {item.transation_type === "loan" ? (
-                "Loan"
-              ) : (
+              {item.transation_type === "loan" && "Loan"}
+              {item.transation_type === "sent" && (
                 <p>
-                  Transfer to <strong>{item.name}</strong>
+                  Transfer to <strong>{item.to}</strong>
+                </p>
+              )}
+              {item.transation_type === "receive" && (
+                <p>
+                  Receive from <strong>{item.from}</strong>
                 </p>
               )}
             </span>
@@ -100,8 +105,7 @@ const TransactionRow = ({ item }) => {
   );
 };
 
-const DesktopTransa = () => {
-  const { transation } = useUser();
+const DesktopTransa = ({ transation }) => {
   return (
     <div className="font-inter max-w-3xl mx-auto mt-14 hidden lg:flex lg:flex-col">
       <h1 className="font-semibold text-[22px] text-black mb-4">

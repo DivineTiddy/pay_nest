@@ -1,4 +1,3 @@
-import { useUser } from "@/context/userContext";
 import TransactionCard from "@/ui/Cards/TransactionCard";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -34,9 +33,9 @@ import { Link } from "react-router-dom";
 //   },
 // ];
 
-const Transaction = () => {
-  const { transation } = useUser();
-  console.log(transation);
+const Transaction = ({transation}) => {
+  // const { transation } = useUser();
+  // console.log(transation);
   return (
     <div className="w-full p-4 lg:p-0 flex flex-col gap-4 bg-[#FDFDFF] font-inter mt-5  lg:mt-14 lg:hidden ">
       <div className="flex items-center justify-between">

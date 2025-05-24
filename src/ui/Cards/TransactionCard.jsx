@@ -3,7 +3,7 @@ import { format } from "date-fns";
 
 //
 const TransactionCard = ({item}) => {
-  const isIncome = item.transation_type === "income" || item.transation_type === "loan";
+  const isIncome = item.transation_type === "receive" || item.transation_type === "loan";
   const formatDateTime = (isoString) => {
     const date = new Date(isoString);
     const day = format(date, "do"); // '4th'
@@ -30,14 +30,17 @@ const TransactionCard = ({item}) => {
         </div>
         <div className="flex flex-col gap-1">
           <span className="text-[#242424] flex items-center gap-2">
-            {item.transation_type === "loan" ? (
-              "Loan"
-            ) : (
-              <p className="font-normal text-sm">
-                Transfer to <br />{" "}
-                <strong className="font-semibold text-sm">{item.name}</strong>
-              </p>
-            )}
+             {item.transation_type === "loan" && "Loan"}
+              {item.transation_type === "sent" && (
+                <p>
+                  Transfer to <strong>{item.to}</strong>
+                </p>
+              )}
+              {item.transation_type === "receive" && (
+                <p>
+                  Receive from <strong>{item.from}</strong>
+                </p>
+              )}
           </span>
           <p className="text-[#767676] font-normal text-xs">
             {day} {month} {time}
