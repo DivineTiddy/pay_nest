@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const items = [
   {
@@ -9,6 +10,7 @@ const items = [
     ),
     color: "bg-[#EBECFF]",
     icon: "icon/sent.svg",
+    link: "/send",
   },
   {
     title: (
@@ -52,9 +54,10 @@ const Categories = () => {
   return (
     <div className="bg-[#FDFDFF] p-4 lg:p-0 w-full mt-4 md:mt-0 font-inter flex justify-between lg:mt-12">
       {items.map((item, index) => (
-        <div
+        <Link
           key={index + 1}
           className="flex flex-col items-center justify-start gap-4 cursor-pointer"
+          to={item.link}
         >
           <div
             className={`${item.color} rounded-[10px] lg:rounded-2xl p-2 lg:p-4 flex items-center justify-center`}
@@ -64,7 +67,7 @@ const Categories = () => {
           <p className="text-[#2B2B2B] text-xs lg:text-base font-normal text-center">
             {item.title}
           </p>
-        </div>
+        </Link>
       ))}
     </div>
   );

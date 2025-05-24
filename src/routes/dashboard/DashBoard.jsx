@@ -78,6 +78,7 @@ const DashBoard = () => {
               <Analysis />
             </div>
           </div>
+          
         </div>
       )}
     </>

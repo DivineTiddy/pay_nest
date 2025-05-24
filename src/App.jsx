@@ -5,6 +5,8 @@ import Login from "./routes/auth/Login";
 import DashBoard from "./routes/dashboard/DashBoard";
 import Verify from "./routes/auth/Verify";
 import { ToastContainer } from "react-toastify";
+import Send from "./routes/dashboard/Send";
+import TransferDetails from "./routes/dashboard/TransferDetails";
 const App = () => {
   return (
    <>
@@ -16,6 +18,8 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<DashBoard />} />
+        <Route path="/send" element={<Send />} />
+         <Route path="/details" element={<TransferDetails />} />
       </Routes>
     </HashRouter>
    </>

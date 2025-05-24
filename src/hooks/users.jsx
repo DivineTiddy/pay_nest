@@ -1,18 +1,31 @@
 import { getCookie } from "@/manager/cookies";
 import axios from "axios";
 
-const API_URL = "https://mini-bank-api.onrender.com/api/users";
+const API_URL = "https://mini-bank-api.onrender.com/api";
 
 export const userCredential = async () => {
   const { accessToken } = getCookie();
-  console.log(accessToken);
 
-  const { data } = await axios.get(`${API_URL}/dashboard`, {
+  const { data } = await axios.get(`${API_URL}/users/dashboard`, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
       "Content-Type": "application/json",
     },
   });
+
+  return data;
+};
+
+export const sentMoney = async (credential) => {
+  const { accessToken } = getCookie();
+
+  const { data } = await axios.post(`${API_URL}/transation/sent`, credential, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+  });
+  console.log(data);
 
   return data;
 };
