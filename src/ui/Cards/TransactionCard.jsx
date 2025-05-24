@@ -12,6 +12,12 @@ const TransactionCard = ({item}) => {
     return { day, month, time };
   };
   const { day, month, time } = formatDateTime(item.createdAt);
+  
+    const formattedAmount = new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+    minimumFractionDigits: 2,
+  }).format(item.amount);
   return (
     <div className="flex items-center justify-between border-t-[1px] border-[#F2F2F2] py-2.5">
       <div className="flex items-center gap-3">
@@ -53,7 +59,7 @@ const TransactionCard = ({item}) => {
            isIncome  ? "text-[#379216]" : "text-[#D41818]"
           } text-sm font-semibold tracking-[0.5px]`}
         >
-          {isIncome ? "+" : "-"} {item.amount}
+          {isIncome ? "+" : "-"} {formattedAmount}
         </p>
         <div className="bg-[#F3F3F3] py-1.5 px-3 rounded-[32px]">
           <p className="font-normal text-xs tracking-[0.5px]">Successful</p>

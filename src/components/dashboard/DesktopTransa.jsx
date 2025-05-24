@@ -48,6 +48,11 @@ const TransactionRow = ({ item }) => {
   };
   const { day, month, time } = formatDateTime(item.createdAt);
 
+  const formattedAmount = new Intl.NumberFormat("en-NG", {
+  style: "currency",
+  currency: "NGN",
+  minimumFractionDigits: 2,
+}).format(item.amount);
 
   return (
     <>
@@ -92,7 +97,7 @@ const TransactionRow = ({ item }) => {
               isIncome ? "text-[#379216]" : "text-[#D41818]"
             }`}
           >
-            {isIncome ? "+" : "-"} {item.amount}
+            {isIncome ? "+" : "-"} {formattedAmount}
           </p>
         </div>
 
@@ -112,7 +117,7 @@ const DesktopTransa = ({ transation }) => {
         Recent Transactions
       </h1>
       <div className="border border-[#E6E6E6] py-5 rounded-xl overflow-hidden mt-8">
-        <div className="flex justify-between px-14 items-center  py-4">
+        <div className="flex justify-between px-4  items-center  py-4">
           <h2 className="text-black font-semibold text-[20px] text-center ">
             Description
           </h2>

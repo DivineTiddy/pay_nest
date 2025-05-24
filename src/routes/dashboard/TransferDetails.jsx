@@ -10,10 +10,18 @@ const TransferDetails = () => {
   const location = useLocation();
   const { email, amount, remark } = location.state || {};
   const credential = {
-    email: email,
-    amount: amount,
-    remarks: remark,
-  };
+  email,
+  amount: parseFloat(amount),
+  remarks: remark,
+};
+
+// Format amount for display
+const formattedAmount = new Intl.NumberFormat("en-NG", {
+  style: "currency",
+  currency: "NGN",
+  minimumFractionDigits: 2,
+}).format(credential.amount);
+
   async function handleSubmit() {
     try {
       setLoading(true);
@@ -56,7 +64,7 @@ const TransferDetails = () => {
         <div className="mt-6 w-full flex flex-col items-center gap-5">
           <div className="flex justify-between items-center w-full ">
             <p className="font-normal text-base text-[#767676]">Amount</p>
-            <p className="text-[#474ED3] font-semibold text-lg">{amount}</p>
+            <p className="text-[#474ED3] font-semibold text-lg">{formattedAmount}</p>
           </div>
           <div className="flex justify-between items-center w-full">
             <p className="font-normal text-base text-[#767676]">Receiver</p>

@@ -3,9 +3,14 @@ import { Eye, EyeOff } from "lucide-react"; // Lucide icon library
 import { getCookie } from "@/manager/cookies";
 
 const Balance_ui = () => {
-  const [showBalance, setShowBalance] = useState(false);
+  const [showBalance, setShowBalance] = useState(true);
   const {first_Name , balance} = getCookie();
-
+ 
+    const formattedAmount = new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+    minimumFractionDigits: 2,
+  }).format(balance);
   return (
     <div className="bg-[#FDFDFF] lg:p-0 p-4 w-full font-inter lg:mt-8">
       <span className=" space-y-2">
@@ -20,7 +25,7 @@ const Balance_ui = () => {
             </p>
             {showBalance ? (
               <h1 className="font-bold text-2xl text-[#E8E9FF] lg:text-3xl lg:mt-5 lg:tracking-wide">
-                NGN {balance}
+               {formattedAmount}
                 <span className="text-[#E2E3FF] font-normal">.00</span>{" "}
               </h1>
             ) : (
@@ -33,7 +38,7 @@ const Balance_ui = () => {
             className=" transform -translate-y-1/2 text-[#E2E3FF]"
             aria-label="Toggle password visibility"
           >
-            {showBalance ? <EyeOff size={20} /> : <Eye size={20} />}
+            {showBalance ? <EyeOff className="cursor-pointer" size={20} /> : <Eye className="cursor-pointer"  size={20} />}
           </button>
         </div>
         <span className="flex flex-col gap-1.5 mt-7">
