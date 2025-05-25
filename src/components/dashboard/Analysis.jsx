@@ -2,7 +2,17 @@ import { AnalysisChart } from "@/ui/chart/AnalysisChart";
 import { Circle } from "lucide-react";
 import React from "react";
 
-const Analysis = () => {
+const Analysis = ({transation}) => {
+     const incomeTypes = ["receive", "loan"];
+const expendTypes = ["sent"];
+const income = transation.filter(tx =>
+  incomeTypes.includes(tx.transation_type)
+);
+const expend = transation.filter(tx =>
+  expendTypes.includes(tx.transation_type)
+);
+const totalIncome = income.reduce((sum, tx) => sum + Number(tx.amount), 0);
+const totalExpend = expend.reduce((sum, tx) => sum + Number(tx.amount), 0);
   return (
     <div className="font-inte mt-10">
       <h1 className="font-semibold text-lg lg:text-[22px] text-[#282828]">
@@ -12,7 +22,7 @@ const Analysis = () => {
         <select className="font-semibold mt-2 mb-4 text-xs lg:text-base text-[#949494]">
           <option>Last Month</option>
         </select>
-        <AnalysisChart />
+        <AnalysisChart totalIncome={totalIncome}  totalExpend={totalExpend}/>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
           <span className="flex items-center gap-2">
             <Circle width={12} height={12} fill="#9094E8" color="#9094E8" />

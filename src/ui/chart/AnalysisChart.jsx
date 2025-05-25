@@ -17,12 +17,15 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-const chartData = [
-  { browser: "chrome", visitors: 22275, fill: "#CA6720" },
-  { browser: "safari", visitors: 20450, fill: "#D5C944" },
-  { browser: "firefox", visitors: 43487, fill: "#9094E8" },
-  { browser: "edge", visitors: 56173, fill: "#333C04" },
-  { browser: "other", visitors: 19350, fill: "#D22363" },
+
+
+export function AnalysisChart({totalIncome , totalExpend}) {
+  const chartData = [
+  { browser: "Recieved", visitors: totalIncome, fill: "#CA6720" },
+  { browser: "Transfer", visitors: totalExpend, fill: "#9094E8" },
+  // { browser: "firefox", visitors: 43487, fill: "#9094E8" },
+  // { browser: "edge", visitors: 56173, fill: "#333C04" },
+  // { browser: "other", visitors: 19350, fill: "#D22363" },
 ];
 const chartConfig = {
   visitors: {
@@ -49,11 +52,9 @@ const chartConfig = {
     color: "hsl(var(--chart-5))",
   },
 };
-
-export function AnalysisChart() {
   const totalVisitors = React.useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.visitors, 0);
-  }, []);
+  }, [chartData]);
 
   return (
     <Card className="flex flex-col lg:shadow-none lg:border-0 lg:p-0 w-full ">

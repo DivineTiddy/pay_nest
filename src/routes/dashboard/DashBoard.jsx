@@ -75,7 +75,7 @@ const DashBoard = () => {
           <div className="p-4 lg:p-0 lg:w-[32%] lg:px-6  lg:py-8 lg:bg-[#FDFDFF] h-full rounded-lg">
             <div className="p-4 lg:p-0 mt-5 lg:mt-0 bg-[#FDFDFD] border-[1px] lg:border-0 border-[#E2E2E2]">
               <Reports transation={transation} />
-              <Analysis />
+              <Analysis  transation={transation}/>
             </div>
           </div>
           
