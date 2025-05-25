@@ -1,40 +1,6 @@
 import React from "react";
 import { format } from "date-fns";
 
-// const data = [
-//   {
-//     type: "expend",
-//     name: "Ocian",
-//     date: "Jan 4th ",
-//     time:"05:34PM",
-//     amount: 4000,
-//     status: "Successful",
-//   },
-//   {
-//     type: "income",
-//     name: "John Akpan",
-//     date: "Jan 4th ",
-//     time:"05:34PM",
-//     amount: 8000,
-//     status: "Successful",
-//   },
-//   {
-//     type: "expend",
-//     name: "John",
-//      date: "Jan 4th ",
-//     time:"05:34PM",
-//     amount: 350,
-//     status: "Successful",
-//   },
-//   {
-//     type: "income",
-//     name: "Divine Akpan",
-//      date: "Jan 4th ",
-//     time:"05:34PM",
-//     amount: 4021,
-//     status: "Successful",
-//   },
-// ];
 
 const TransactionRow = ({ item }) => {
   const isIncome =
@@ -112,12 +78,12 @@ const TransactionRow = ({ item }) => {
 
 const DesktopTransa = ({ transation }) => {
   return (
-    <div className="font-inter max-w-3xl mx-auto mt-14 hidden lg:flex lg:flex-col">
+    <div className="font-inter max-w-3xl mx-auto mt-14 hidden lg:flex lg:flex-col lg:pb-10">
       <h1 className="font-semibold text-[22px] text-black mb-4">
         Recent Transactions
       </h1>
-      <div className="border border-[#E6E6E6] py-5 rounded-xl overflow-hidden mt-8">
-        <div className="flex justify-between px-4  items-center  py-4">
+      <div className="border border-[#E6E6E6] py-5 rounded-xl overflow-hidden mt-2">
+        <div className="flex justify-between px-4  items-center  py-2">
           <h2 className="text-black font-semibold text-[20px] text-center ">
             Description
           </h2>

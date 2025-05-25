@@ -17,7 +17,7 @@ const Balance_ui = () => {
         <p className="text-xs text-[#767676] font-medium lg:text-lg">Hello, {first_Name}</p>
         <h1 className="text-lg text-[#2B2B2B] font-semibold lg:text-2xl">Welcome back</h1>
       </span>
-      <div className="bg-[#474ED3] border-[1px] border-[#E9E9E9] lg:w-[75%] px-6 py-4 lg:py-8 lg:px-10 lg:rounded-[30px] rounded-[20px] mt-4 lg:mt-7">
+      <div className="bg-[#474ED3] border-[1px] border-[#E9E9E9] lg:w-[80%] px-6 py-4 lg:py-8 lg:px-10 lg:rounded-[30px] rounded-[20px] mt-4 lg:mt-7">
         <div className="flex justify-between items-center">
           <span>
             <p className="font-normal text-xs text-[#E2E3FF] lg:text-base">

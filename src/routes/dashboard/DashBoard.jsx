@@ -62,17 +62,17 @@ const DashBoard = () => {
         </div>
       )}
       {!loading && !error && (
-        <div className="bg-[#F5F5F5] lg:bg-[#FDFDFF] lg:px-14  w-full lg:grid lg:grid-cols-5 lg:gap-4 lg:py-10 ">
+        <div className="bg-[#F5F5F5] lg:bg-[#F4F4F4] lg:px-14   w-full lg:flex lg:justify-between   lg:gap-6 lg:py-10 ">
           <SideNav />
           {/* middle container */}
-          <div className="lg:col-span-3 lg:px-12">
+          <div className="lg:w-[70%] lg:px-8 lg:bg-[#FDFDFF] lg:rounded-lg ">
             <TopDashBoardNav />
             <Balance_ui />
             <Categories />
             <Transaction transation={transation} />
             <DesktopTransa transation={transation} />
           </div>
-          <div className="p-4 lg:p-0   lg:col-span-1 lg:py-8">
+          <div className="p-4 lg:p-0 lg:w-[32%] lg:px-6  lg:py-8 lg:bg-[#FDFDFF] h-full rounded-lg">
             <div className="p-4 lg:p-0 mt-5 lg:mt-0 bg-[#FDFDFD] border-[1px] lg:border-0 border-[#E2E2E2]">
               <Reports transation={transation} />
               <Analysis />

@@ -95,11 +95,7 @@ const Register = () => {
                     firstName ? "border-[#474ED3]" : "border-[#DBDBDB]"
                   }`}
                 />
-                {errors.first_Name?.type === "required" && (
-                  <p role="alert" className="text-sm text-red-400">
-                    *
-                  </p>
-                )}
+              
               </div>
               <div className="flex flex-col gap-2 lg:w-[200px]">
                 <label>Last Name</label>
@@ -112,11 +108,7 @@ const Register = () => {
                     lastName ? "border-[#474ED3]" : "border-[#DBDBDB]"
                   }`}
                 />
-                {errors.last_Name?.type === "required" && (
-                  <p role="alert" className="text-sm text-red-400">
-                    *
-                  </p>
-                )}
+               
               </div>
             </div>
             <div className="flex flex-col gap-2">
@@ -130,11 +122,7 @@ const Register = () => {
                   email ? "border-[#474ED3]" : "border-[#DBDBDB]"
                 }`}
               />
-              {errors.email?.type === "required" && (
-                <p role="alert" className="text-sm text-red-400">
-                  *
-                </p>
-              )}
+            
             </div>
             <div className="flex flex-col gap-2">
               <label>Create Password</label>
@@ -147,11 +135,7 @@ const Register = () => {
                   password ? "border-[#474ED3] " : "border-[#DBDBDB]"
                 }`}
               />
-              {errors.password?.type === "required" && (
-                <p role="alert" className="text-sm text-red-400">
-                  *
-                </p>
-              )}
+             
             </div>
             <button
               type="submit"

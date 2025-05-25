@@ -6,7 +6,7 @@ const SideNav = () => {
   const getColor = (name) => (active === name ? "#474ED3 " : "#949494");
 
   return (
-    <div className="hidden h-full  lg:flex flex-col lg:col-span-1 font-inter bg-[#F8F8FF] px-3 py-8 rounded-lg ">
+    <div className="hidden h-screen  lg:flex flex-col  font-inter bg-[#DFE1FF] px-3 py-8 rounded-lg lg:w-[25%]">
       <div className="flex items-center gap-1.5">
         <img src="/image/payNestLogo.svg" alt="logo" className="w-9 md:w-12" />
         <h1 className="text-[#474ED3] text-[28px] font-bold">PayNest</h1>
@@ -16,7 +16,7 @@ const SideNav = () => {
         {/* Dashboard */}
         <button
           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
-            active === "dashboard" ? "bg-[#E6E8FF]" : ""
+            active === "dashboard" ? "bg-[#D2D4FF]" : ""
           }`}
           onClick={() => setActive("dashboard")}
           style={{ color: getColor("dashboard") }}
@@ -38,7 +38,7 @@ const SideNav = () => {
 
         {/* Cards */}
         <button
-           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "cards" ? "bg-[#E6E8FF]" : ""}`}
+           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "cards" ? "bg-[#D2D4FF]" : ""}`}
 
           onClick={() => setActive("cards")}
           style={{ color: getColor("cards") }}
@@ -63,7 +63,7 @@ const SideNav = () => {
 
         {/* Notifications */}
         <button
-           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "notifications" ? "bg-[#E6E8FF]" : ""}`}
+           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "notifications" ? "bg-[#D2D4FF]" : ""}`}
 
           onClick={() => setActive("notifications")}
           style={{ color: getColor("notifications") }}
@@ -88,7 +88,7 @@ const SideNav = () => {
 
         {/* Report */}
         <button
-          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "report" ? "bg-[#E6E8FF]" : ""}`}
+          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "report" ? "bg-[#D2D4FF]" : ""}`}
 
           onClick={() => setActive("report")}
           style={{ color: getColor("report") }}
@@ -119,7 +119,7 @@ const SideNav = () => {
         </button>
         {/* Support */}
         <button
-            className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "Support" ? "bg-[#E6E8FF]" : ""}`}
+            className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "Support" ? "bg-[#D2D4FF]" : ""}`}
 
           onClick={() => setActive("Support")}
           style={{ color: getColor("Support") }}
@@ -142,7 +142,7 @@ const SideNav = () => {
         </button>
         {/* Settings */}
         <button
-           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "Settings" ? "bg-[#E6E8FF]" : ""}`}
+           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "Settings" ? "bg-[#D2D4FF]" : ""}`}
 
           onClick={() => setActive("Settings")}
           style={{ color: getColor("Settings") }}

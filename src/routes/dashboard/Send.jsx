@@ -12,6 +12,23 @@ const Send = () => {
   };
   return (
     <div className="flex items-center justify-center h-screen w-full bg-[#F5F5F5] px-3 lg:px-0">
+      {/* remove later */}
+      <div className="w-full lg:w-[500px]  rounded-2xl bg-[#FDFDFF] py-10 px-8 hidden flex-col gap-5 items-center">
+        <img src="icon\success.svg" alt="icon" />
+        <div className="">
+          <h1 className="font-semibold text-[28px] text-[#2B2B2B] text-center">
+            Successful
+          </h1>
+          <p className="text-[#767676] text-base font-normal text-center">
+            N20,000 has been sent to successfully sent to Olu James with account
+            number 2324424241
+          </p>
+        </div>
+        <button className="bg-[#474ED3] mt-4 py-4 px-6 font-bold text-base text-[#F3F3FF] rounded-[8px] cursor-pointer">
+          OK
+        </button>
+      </div>
+      {/* remove later */}
       <div className=" w-full lg:w-[500px]">
         <h1 className="font-bold text-center text-[20px] text-[#2B2B2B]">
           Send Money

@@ -11,8 +11,16 @@ const expend = transation.filter(tx =>
 );
 const totalIncome = income.reduce((sum, tx) => sum + Number(tx.amount), 0);
 const totalExpend = expend.reduce((sum, tx) => sum + Number(tx.amount), 0);
-
-console.log(totalIncome , totalExpend)
+  const formattedAmountIncome = new Intl.NumberFormat("en-NG", {
+  style: "currency",
+  currency: "NGN",
+  minimumFractionDigits: 2,
+}).format(totalIncome);
+  const formattedAmountExpend = new Intl.NumberFormat("en-NG", {
+  style: "currency",
+  currency: "NGN",
+  minimumFractionDigits: 2,
+}).format(totalExpend);
   return (
     <div className="font-inter">
       <div>
@@ -27,7 +35,7 @@ console.log(totalIncome , totalExpend)
         <div className="w-full p-4 lg:py-6 border-[1px] border-[#DFDFDF] rounded-2xl flex flex-col gap-4">
           <p className="text-[#767676] font-normal text-sm lg:text-base">Total Income</p>
           <h1 className="font-bold text-[20px] text-[#007E04] lg:text-[24px]">
-            + NGN {totalIncome}
+            + {formattedAmountIncome}
           </h1>
         </div>
         <div className="w-full p-4  lg:py-6  border-[1px] border-[#DFDFDF] rounded-2xl flex flex-col gap-4">
@@ -35,7 +43,7 @@ console.log(totalIncome , totalExpend)
             Total Expenditure
           </p>
           <h1 className="font-bold text-[20px] lg:text-[24px] text-[#D41818]">
-            - NGN {totalExpend}
+            - {formattedAmountExpend}
           </h1>
         </div>
       </div>
