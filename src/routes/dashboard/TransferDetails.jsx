@@ -26,18 +26,18 @@ const formattedAmount = new Intl.NumberFormat("en-NG", {
     try {
       setLoading(true);
       await sentMoney(credential);
-      toast.success("Send successfully", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Zoom,
-      });
-      navigate("/dashboard");
+      // toast.success("Send successfully", {
+      //   position: "top-right",
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: false,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "light",
+      //   transition: Zoom,
+      // });
+      navigate("/success" , { state: credential });
     } catch (error) {
       toast.error(`${error.response.data.error}`, {
         position: "top-right",

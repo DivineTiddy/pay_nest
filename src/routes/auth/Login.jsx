@@ -108,7 +108,7 @@ const Login = () => {
                   {showBalance ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
-              <Link className="text-end underline">Forgot password?</Link>
+              <Link className="text-end underline mb-2">Forgot password?</Link>
             </div>
           </div>
         </div>

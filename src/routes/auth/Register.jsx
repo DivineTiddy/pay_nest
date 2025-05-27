@@ -65,7 +65,7 @@ const Register = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-[#F5F5F5] px-3   lg:px-10 h-screen w-full flex justify-center items-center"
+      className="bg-[#F5F5F5] px-3  lg:py-4 lg:px-10 h-full w-full flex justify-center items-center"
     >
       {/* Registration Form */}
       <div

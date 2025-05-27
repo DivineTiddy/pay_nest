@@ -29,3 +29,17 @@ export const sentMoney = async (credential) => {
 
   return data;
 };
+
+export const loanMoney = async (credential) => {
+  const { accessToken } = getCookie();
+ 
+  const { data } = await axios.post(`${API_URL}/transation/loan`, credential, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    },
+  });
+  console.log(data);
+
+  return data;
+};

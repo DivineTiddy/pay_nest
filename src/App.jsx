@@ -7,22 +7,26 @@ import Verify from "./routes/auth/Verify";
 import { ToastContainer } from "react-toastify";
 import Send from "./routes/dashboard/Send";
 import TransferDetails from "./routes/dashboard/TransferDetails";
+import Success from "./routes/dashboard/Success";
+import Loan from "./routes/dashboard/Loan";
 const App = () => {
   return (
-   <>
-   <ToastContainer />
-    <HashRouter>      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/verify" element={<Verify />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<DashBoard />} />
-        <Route path="/send" element={<Send />} />
-         <Route path="/details" element={<TransferDetails />} />
-      </Routes>
-    </HashRouter>
-   </>
+    <>
+      <ToastContainer />
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/verify" element={<Verify />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<DashBoard />} />
+          <Route path="/send" element={<Send />} />
+          <Route path="/details" element={<TransferDetails />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/loan" element={<Loan />} />
+        </Routes>
+      </HashRouter>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { format } from "date-fns";
-
+import "../../styles/scroll-bar.css"
 
 const TransactionRow = ({ item }) => {
   const isIncome =
@@ -90,7 +90,7 @@ const DesktopTransa = ({ transation }) => {
           <h2 className="text-black font-semibold text-[20px]">Amount</h2>
           <h2 className="text-black font-semibold text-[20px]  ">Status</h2>
         </div>
-        <div>
+        <div className="h-[300px] overflow-y-auto hide-scrollbar">
           {transation.length > 0
             ? transation.map((item, index) => (
                 <TransactionRow key={index} item={item} />

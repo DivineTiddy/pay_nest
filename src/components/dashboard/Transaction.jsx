@@ -13,7 +13,7 @@ const Transaction = ({transation}) => {
         </h1>
         <Link className="font-normal text-xs underline">View all</Link>
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 h-[300px] overflow-y-auto  hide-scrollbar ">
         {transation.length > 0
           ? transation.map((item, index) => (
               <TransactionCard key={index + 1} item={item} />
