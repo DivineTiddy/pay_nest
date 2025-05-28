@@ -10,7 +10,6 @@ import TransferDetails from "./routes/dashboard/TransferDetails";
 import Success from "./routes/dashboard/Success";
 import Loan from "./routes/dashboard/Loan";
 const App = () => {
-  // dashboard
   return (
     <>
       <ToastContainer />
@@ -19,7 +18,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/verify" element={<Verify />} />
           <Route path="/register" element={<Register />} />
-          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/send" element={<Send />} />
           <Route path="/details" element={<TransferDetails />} />
