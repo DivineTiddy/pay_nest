@@ -37,11 +37,17 @@ const Loan = () => {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center h-screen w-full bg-[#F5F5F5] px-3 lg:px-0">
-      <h1 className="font-bold text-center text-[20px] text-[#2B2B2B]">Loan</h1>
+    <div className="flex flex-col items-center py-5 lg:justify-center h-screen w-full bg-[#F5F5F5] px-3 lg:px-0">
+      <div className="w-full lg:w-[500px] flex items-center justify-between">
+        <img src="icon\back-arrow.svg" alt="icon" className="w-auto h-auto cursor-pointer"/>
+        <h1 className="font-bold text-center text-[20px] text-[#2B2B2B]">Loan</h1>
+        
+        <p></p>
+      </div>
+      
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full lg:w-[500px] lg:mt-5  rounded-2xl bg-[#FDFDFF] py-10 px-8 flex flex-col gap-5 items-center"
+        className="w-full lg:w-[500px] lg:mt-9  mt-8 rounded-2xl bg-[#FDFDFF] py-10 px-8 flex flex-col gap-5 items-center"
       >
         <div className="flex flex-col gap-2 w-full">
           <label className="text-[#767676] font-normal text-base">Amount</label>

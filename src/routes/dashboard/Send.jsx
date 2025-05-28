@@ -11,11 +11,20 @@ const Send = () => {
   };
   return (
     <div className="flex items-center justify-center h-screen w-full bg-[#F5F5F5] px-3 lg:px-0">
-     
       <div className=" w-full lg:w-[500px]">
-        <h1 className="font-bold text-center text-[20px] text-[#2B2B2B]">
-          Send Money
-        </h1>
+        <div className="w-full lg:w-[500px] flex items-center justify-between">
+          <img
+            src="icon\back-arrow.svg"
+            alt="icon"
+            className="w-auto h-auto cursor-pointer"
+          />
+          <h1 className="font-bold text-center text-[20px] text-[#2B2B2B]">
+            {" "}
+            Send Money
+          </h1>
+
+          <p></p>
+        </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="mt-5 rounded-2xl bg-[#FDFDFF] py-10 px-8 flex flex-col gap-4 items-center"

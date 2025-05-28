@@ -57,6 +57,19 @@ const formattedAmount = new Intl.NumberFormat("en-NG", {
 
   return (
     <div className="flex justify-center items-center h-screen w-full bg-[#F5F5F5] px-3 lg:px-0">
+      <div className="w-full lg:w-[500px] flex items-center justify-between">
+          <img
+            src="icon\back-arrow.svg"
+            alt="icon"
+            className="w-auto h-auto cursor-pointer"
+          />
+          <h1 className="font-bold text-center text-[20px] text-[#2B2B2B]">
+            {" "}
+            Send Money
+          </h1>
+
+          <p></p>
+        </div>
       <div className="w-full lg:w-[500px] bg-[#FDFDFD] py-8 px-8 rounded-[16px]">
         <h1 className="font-bold text-lg text-[#2B2B2B] text-center">
           Transfer Details

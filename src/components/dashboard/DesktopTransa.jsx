@@ -1,6 +1,7 @@
 import React from "react";
 import { format } from "date-fns";
-import "../../styles/scroll-bar.css"
+import "../../styles/scroll-bar.css";
+import TransactionNull from "@/ui/null/TransactionNull";
 
 const TransactionRow = ({ item }) => {
   const isIncome =
@@ -15,10 +16,10 @@ const TransactionRow = ({ item }) => {
   const { day, month, time } = formatDateTime(item.createdAt);
 
   const formattedAmount = new Intl.NumberFormat("en-NG", {
-  style: "currency",
-  currency: "NGN",
-  minimumFractionDigits: 2,
-}).format(item.amount);
+    style: "currency",
+    currency: "NGN",
+    minimumFractionDigits: 2,
+  }).format(item.amount);
 
   return (
     <>
@@ -77,27 +78,30 @@ const TransactionRow = ({ item }) => {
 };
 
 const DesktopTransa = ({ transation }) => {
+  const showNullState = transation.length > 0;
   return (
     <div className="font-inter max-w-3xl mx-auto mt-14 hidden lg:flex lg:flex-col lg:pb-10">
       <h1 className="font-semibold text-[22px] text-black mb-4">
         Recent Transactions
       </h1>
-      <div className="border border-[#E6E6E6] py-5 rounded-xl overflow-hidden mt-2">
-        <div className="flex justify-between px-4  items-center  py-2">
-          <h2 className="text-black font-semibold text-[20px] text-center ">
-            Description
-          </h2>
-          <h2 className="text-black font-semibold text-[20px]">Amount</h2>
-          <h2 className="text-black font-semibold text-[20px]  ">Status</h2>
+      {showNullState ? (
+        <div className="border border-[#E6E6E6] py-5 rounded-xl overflow-hidden mt-2">
+          <div className="flex justify-between px-4  items-center  py-2">
+            <h2 className="text-black font-semibold text-[20px] text-center ">
+              Description
+            </h2>
+            <h2 className="text-black font-semibold text-[20px]">Amount</h2>
+            <h2 className="text-black font-semibold text-[20px]  ">Status</h2>
+          </div>
+          <div className="">
+            {transation.map((item, index) => (
+              <TransactionRow key={index} item={item} />
+            ))}
+          </div>
         </div>
-        <div className="h-[300px] overflow-y-auto hide-scrollbar">
-          {transation.length > 0
-            ? transation.map((item, index) => (
-                <TransactionRow key={index} item={item} />
-              ))
-            : "No transaction yet"}
-        </div>
-      </div>
+      ) : (
+        <TransactionNull />
+      )}
     </div>
   );
 };

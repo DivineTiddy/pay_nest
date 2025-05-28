@@ -1,4 +1,5 @@
 import TransactionCard from "@/ui/Cards/TransactionCard";
+import TransactionNull from "@/ui/null/TransactionNull";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -13,12 +14,12 @@ const Transaction = ({transation}) => {
         </h1>
         <Link className="font-normal text-xs underline">View all</Link>
       </div>
-      <div className="flex flex-col gap-2 h-[300px] overflow-y-auto  hide-scrollbar ">
+      <div className="flex flex-col gap-2  ">
         {transation.length > 0
           ? transation.map((item, index) => (
               <TransactionCard key={index + 1} item={item} />
             ))
-          : "No transaction yet"}
+          : <TransactionNull/>}
       </div>
     </div>
   );
