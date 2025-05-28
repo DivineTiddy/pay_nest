@@ -1,3 +1,4 @@
+import BackButton from "@/ui/buttons/BackButton";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -13,11 +14,7 @@ const Send = () => {
     <div className="flex items-center justify-center h-screen w-full bg-[#F5F5F5] px-3 lg:px-0">
       <div className=" w-full lg:w-[500px]">
         <div className="w-full lg:w-[500px] flex items-center justify-between">
-          <img
-            src="icon\back-arrow.svg"
-            alt="icon"
-            className="w-auto h-auto cursor-pointer"
-          />
+          <BackButton/>
           <h1 className="font-bold text-center text-[20px] text-[#2B2B2B]">
             {" "}
             Send Money

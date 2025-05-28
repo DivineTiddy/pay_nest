@@ -1,4 +1,5 @@
 import { loanMoney } from "@/hooks/users";
+import BackButton from "@/ui/buttons/BackButton";
 import Loarder from "@/ui/loader/Loarder";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -39,7 +40,7 @@ const Loan = () => {
   return (
     <div className="flex flex-col items-center py-5 lg:justify-center h-screen w-full bg-[#F5F5F5] px-3 lg:px-0">
       <div className="w-full lg:w-[500px] flex items-center justify-between">
-        <img src="icon\back-arrow.svg" alt="icon" className="w-auto h-auto cursor-pointer"/>
+        <BackButton/>
         <h1 className="font-bold text-center text-[20px] text-[#2B2B2B]">Loan</h1>
         
         <p></p>
