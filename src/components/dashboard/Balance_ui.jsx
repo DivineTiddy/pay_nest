@@ -13,7 +13,7 @@ const Balance_ui = () => {
   }).format(balance);
   return (
     <div className="bg-[#FDFDFF] lg:p-0 p-4 w-full font-inter lg:mt-8">
-      <span className=" space-y-2">
+      <span className=" space-y-4">
         <p className="text-xs text-[#767676] font-medium lg:text-lg">Hello, {first_Name}</p>
         <h1 className="text-lg text-[#2B2B2B] font-semibold lg:text-2xl">Welcome back</h1>
       </span>
