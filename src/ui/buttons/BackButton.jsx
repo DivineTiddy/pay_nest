@@ -10,7 +10,7 @@ const BackButton = () => {
   };
 
   return (
-    <button onClick={handleGoBack}>
+    <button className="lg:hidden" onClick={handleGoBack}>
       <img
         src="icon\back-arrow.svg"
         alt="icon"

@@ -57,17 +57,17 @@ const TransferDetails = () => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen w-full bg-[#F5F5F5] px-3 lg:px-0">
-      <div className="w-full lg:w-[500px] flex items-center justify-between">
+    <div className="flex flex-col lg:justify-center items-center h-screen w-full bg-[#F5F5F5] px-5 lg:px-0">
+      <div className=" mt-16 w-full lg:w-[500px] flex items-center justify-between lg:justify-center">
         <BackButton />
         <h1 className="font-bold text-center text-[20px] text-[#2B2B2B]">
           {" "}
           Send Money
         </h1>
 
-        <p></p>
+        <p className="lg:hidden"></p>
       </div>
-      <div className="w-full mt-16 lg:w-[500px] bg-[#FDFDFD] py-8 px-8 rounded-[16px]">
+      <div className="w-full mt-10 lg:w-[500px] bg-[#FDFDFD] py-5 px-5 rounded-[16px]">
         <h1 className="font-bold text-lg text-[#2B2B2B] text-center">
           Transfer Details
         </h1>
@@ -92,7 +92,7 @@ const TransferDetails = () => {
           </div>
           <button
             onClick={handleSubmit}
-            className="bg-[#474ED3] flex items-center justify-center rounded-[8px] cursor-pointer mt-10 w-full py-4 px-6 text-[#F3F3FF] font-bold text-base"
+            className="bg-[#474ED3] flex items-center justify-center rounded-[8px] cursor-pointer mt-14 w-full py-4 px-6 text-[#F3F3FF] font-bold text-base"
           >
             {loading ? <Loarder /> : "Send"}
           </button>

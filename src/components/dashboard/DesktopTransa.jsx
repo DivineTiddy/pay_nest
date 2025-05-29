@@ -94,7 +94,7 @@ const DesktopTransa = ({ transation }) => {
             <h2 className="text-black font-semibold text-[20px]  ">Status</h2>
           </div>
           <div className="">
-            {transation.map((item, index) => (
+            {transation.slice(0, 4).map((item, index) => (
               <TransactionRow key={index} item={item} />
             ))}
           </div>

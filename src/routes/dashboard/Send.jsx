@@ -11,20 +11,20 @@ const Send = () => {
     navigate("/details", { state: data });
   };
   return (
-    <div className="flex items-center justify-center h-screen w-full bg-[#F5F5F5] px-3 lg:px-0">
-      <div className=" w-full lg:w-[500px]">
-        <div className="w-full lg:w-[500px] flex items-center justify-between">
+    <div className="flex lg:items-center justify-center h-screen w-full bg-[#F5F5F5] px-5 lg:px-0">
+      <div className=" mt-16 lg:mt-0 w-full lg:w-[500px]">
+        <div className="w-full lg:w-[500px] flex items-center justify-between lg:justify-center">
           <BackButton/>
           <h1 className="font-bold text-center text-[20px] text-[#2B2B2B]">
             {" "}
             Send Money
           </h1>
 
-          <p></p>
+          <p className="lg:hidden"></p>
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="mt-5 rounded-2xl bg-[#FDFDFF] py-10 px-8 flex flex-col gap-4 items-center"
+          className="mt-10 rounded-2xl bg-[#FDFDFF] py-10 px-4 lg:px-8 flex flex-col gap-4 items-center"
         >
           <div className="flex flex-col gap-2 w-full">
             <label className="text-[#767676] font-normal text-base">

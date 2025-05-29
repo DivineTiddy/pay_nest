@@ -9,6 +9,8 @@ import Send from "./routes/dashboard/Send";
 import TransferDetails from "./routes/dashboard/TransferDetails";
 import Success from "./routes/dashboard/Success";
 import Loan from "./routes/dashboard/Loan";
+import Index from "./routes/dashboard/Index";
+import TransactionPage from "./routes/dashboard/TransactionPage";
 const App = () => {
   return (
     <>
@@ -19,7 +21,10 @@ const App = () => {
           <Route path="/verify" element={<Verify />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<DashBoard />} />
+          <Route path="/dashboard" element={<DashBoard />}>
+            <Route index element={<Index />} />
+            <Route path="/dashboard/transaction" element={<TransactionPage />} />
+          </Route>
           <Route path="/send" element={<Send />} />
           <Route path="/details" element={<TransferDetails />} />
           <Route path="/success" element={<Success />} />

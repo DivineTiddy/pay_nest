@@ -28,7 +28,7 @@ const totalExpend = expend.reduce((sum, tx) => sum + Number(tx.amount), 0);
           Transaction Report
         </h1>
         <select className="font-semibold mt-2 text-xs lg:text-base  text-[#949494]">
-          <option>Last Month</option>
+          <option>This Month</option>
         </select>
       </div>
       <div className="flex flex-col gap-6 mt-5 lg:mt-7">

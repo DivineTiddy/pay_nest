@@ -20,7 +20,7 @@ const Transaction = ({ transation }) => {
       </div>
       <div className="flex flex-col gap-2  ">
         {showNullState ? (
-          transation.map((item, index) => (
+          transation.slice(0, 4).map((item, index) => (
             <TransactionCard key={index + 1} item={item} />
           ))
         ) : (

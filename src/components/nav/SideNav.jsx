@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SideNav = () => {
   const [active, setActive] = useState("dashboard"); // default active
@@ -6,7 +7,7 @@ const SideNav = () => {
   const getColor = (name) => (active === name ? "#474ED3 " : "#949494");
 
   return (
-    <div className="hidden h-screen  lg:flex flex-col  font-inter bg-[#DFE1FF] px-3 py-8 rounded-lg lg:w-[25%]">
+    <div className="hidden h-screen lg:flex flex-col  font-inter bg-[#DFE1FF] px-3 py-8 rounded-lg lg:w-[25%]">
       <div className="flex items-center gap-1.5">
         <img src="/image/payNestLogo.svg" alt="logo" className="w-9 md:w-12" />
         <h1 className="text-[#474ED3] text-[28px] font-bold">PayNest</h1>
@@ -14,7 +15,8 @@ const SideNav = () => {
 
       <div className="flex flex-col gap-6 font-semibold text-[20px] mt-16">
         {/* Dashboard */}
-        <button
+        <Link
+          to="/dashboard"
           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
             active === "dashboard" ? "bg-[#D2D4FF]" : ""
           }`}
@@ -34,12 +36,47 @@ const SideNav = () => {
             />
           </svg>
           Dashboard
-        </button>
+        </Link>
+
+        {/* Transaction */}
+        <Link
+          to="/dashboard/transaction"
+          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
+            active === "transactions" ? "bg-[#D2D4FF]" : ""
+          }`}
+          onClick={() => setActive("transactions")}
+          style={{ color: getColor("transactions") }}
+        >
+          <svg
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19.5 3.47461H4.5C4.10218 3.47461 3.72064 3.63264 3.43934 3.91395C3.15804 4.19525 3 4.57678 3 4.97461V19.9746C3 20.3724 3.15804 20.754 3.43934 21.0353C3.72064 21.3166 4.10218 21.4746 4.5 21.4746H19.5C19.8978 21.4746 20.2794 21.3166 20.5607 21.0353C20.842 20.754 21 20.3724 21 19.9746V4.97461C21 4.57678 20.842 4.19525 20.5607 3.91395C20.2794 3.63264 19.8978 3.47461 19.5 3.47461Z"
+              stroke={getColor("transactions")}
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M10.5 15.9746L13 17.9746L17 12.9746M7 7.97461H17M7 11.9746H11"
+              stroke={getColor("transactions")}
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          Transactions
+        </Link>
 
         {/* Cards */}
         <button
-           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "cards" ? "bg-[#D2D4FF]" : ""}`}
-
+          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
+            active === "cards" ? "bg-[#D2D4FF]" : ""
+          }`}
           onClick={() => setActive("cards")}
           style={{ color: getColor("cards") }}
         >
@@ -63,8 +100,9 @@ const SideNav = () => {
 
         {/* Notifications */}
         <button
-           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "notifications" ? "bg-[#D2D4FF]" : ""}`}
-
+          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
+            active === "notifications" ? "bg-[#D2D4FF]" : ""
+          }`}
           onClick={() => setActive("notifications")}
           style={{ color: getColor("notifications") }}
         >
@@ -88,8 +126,9 @@ const SideNav = () => {
 
         {/* Report */}
         <button
-          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "report" ? "bg-[#D2D4FF]" : ""}`}
-
+          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
+            active === "report" ? "bg-[#D2D4FF]" : ""
+          }`}
           onClick={() => setActive("report")}
           style={{ color: getColor("report") }}
         >
@@ -119,8 +158,9 @@ const SideNav = () => {
         </button>
         {/* Support */}
         <button
-            className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "Support" ? "bg-[#D2D4FF]" : ""}`}
-
+          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
+            active === "Support" ? "bg-[#D2D4FF]" : ""
+          }`}
           onClick={() => setActive("Support")}
           style={{ color: getColor("Support") }}
         >
@@ -142,8 +182,9 @@ const SideNav = () => {
         </button>
         {/* Settings */}
         <button
-           className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${active === "Settings" ? "bg-[#D2D4FF]" : ""}`}
-
+          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
+            active === "Settings" ? "bg-[#D2D4FF]" : ""
+          }`}
           onClick={() => setActive("Settings")}
           style={{ color: getColor("Settings") }}
         >
