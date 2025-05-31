@@ -15,7 +15,9 @@ const Verify = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [otp, setOtp] = useState("");
   const navigate = useNavigate();
-  const email = getCookie();
+  // const email = getCookie();
+    const {email } = getCookie();
+  
 
   const codeSubmit = async (e) => {
     e.preventDefault();

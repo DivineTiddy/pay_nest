@@ -1,9 +1,12 @@
+import { useUser } from "@/context/userContext";
 import { AnalysisChart } from "@/ui/chart/AnalysisChart";
 import ReportNullState from "@/ui/null/ReportNullState";
 import { Circle } from "lucide-react";
 import React from "react";
 
-const Analysis = ({ transation }) => {
+const Analysis = () => {
+  const { transation } = useUser();
+
   const incomeTypes = ["receive", "loan"];
   const expendTypes = ["sent"];
   const income = transation.filter((tx) =>

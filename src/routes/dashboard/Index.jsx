@@ -5,75 +5,72 @@ import DesktopTransa from "@/components/dashboard/DesktopTransa";
 import Reports from "@/components/dashboard/Reports";
 import Transaction from "@/components/dashboard/Transaction";
 import { TopDashBoardNav } from "@/components/nav/DashBoardNav";
-import { userCredential } from "@/hooks/users";
-import { setCookie } from "@/manager/cookies";
+import { useUser } from "@/context/userContext";
+// import { userCredential } from "@/hooks/users";
+// import { setCookie } from "@/manager/cookies";
 import Loader from "@/ui/loader/dashBoardLoader";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast, Zoom } from "react-toastify";
+// import { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { toast, Zoom } from "react-toastify";
 
 const Index = () => {
-  const [transation, setTransation] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const navigate = useNavigate();
+  // const [transation, setTransation] = useState([]);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(false);
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    const getUser = async () => {
-      try {
-        setLoading(true);
-        const responses = await userCredential();
-        console.log(responses);
-        setCookie(responses.data);
-        setTransation(responses.transation);
-      } catch (error) {
-        setError(true);
-        const Unauthorized = error.response.data.message;
-        if (Unauthorized === "Unauthorized") {
-          setCookie({ accessToken: "" });
-          navigate("/login");
-        } else {
-          console.error("Error fetching user data:", error);
-        }
-        toast.error(`${error.response.data.message}`, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          transition: Zoom,
-        });
-      } finally {
-        setLoading(false);
-      }
-    };
-    getUser();
-  }, [navigate]);
+  // useEffect(() => {
+  //   const getUser = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const responses = await userCredential();
+  //       console.log(responses);
+  //       setCookie(responses.data);
+  //       setTransation(responses.transation);
+  //     } catch (error) {
+  //       setError(true);
+  //       const Unauthorized = error.response.data.message;
+  //       if (Unauthorized === "Unauthorized") {
+  //         setCookie({ accessToken: "" });
+  //         navigate("/login");
+  //       } else {
+  //         console.error("Error fetching user data:", error);
+  //       }
+  //       toast.error(`${error.response.data.message}`, {
+  //         position: "top-right",
+  //         autoClose: 5000,
+  //         hideProgressBar: false,
+  //         closeOnClick: false,
+  //         pauseOnHover: true,
+  //         draggable: true,
+  //         progress: undefined,
+  //         theme: "light",
+  //         transition: Zoom,
+  //       });
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   getUser();
+  // }, [navigate]);
   // Loader
+  const { loading, error } = useUser();
+
   return (
     <>
       {loading && (
-        <div className="flex items-center justify-center h-screen w-full ">
+        <div className="flex items-center justify-center w-full ">
           <Loader />
         </div>
       )}
       {!loading && !error && (
         <div className="lg:flex gap-6">
-          <div className="lg:w-[70%]  lg:px-8 lg:bg-[#FDFDFF] lg:rounded-lg   ">
+          <div className="  lg:px-5 lg:bg-[#FDFDFF] lg:rounded-lg">
             <TopDashBoardNav />
             <Balance_ui />
             <Categories />
-            <Transaction transation={transation} />
-            <DesktopTransa transation={transation} />
-          </div>
-          <div className="w-full  lg:p-0 lg:w-[32%] lg:px-6  lg:py-8 lg:bg-[#FDFDFF] h-full rounded-lg">
-            <div className="p-4 lg:p-0 mt-5 lg:mt-0 h-full bg-[#FDFDFD] border-[1px] lg:border-0 border-[#E2E2E2]">
-              <Reports transation={transation} />
-              <Analysis transation={transation} />
-            </div>
+            <Transaction />
+            <DesktopTransa />
           </div>
         </div>
       )}

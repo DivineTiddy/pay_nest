@@ -7,7 +7,7 @@ const SideNav = () => {
   const getColor = (name) => (active === name ? "#474ED3 " : "#949494");
 
   return (
-    <div className="hidden h-screen lg:flex flex-col  font-inter bg-[#DFE1FF] px-3 py-8 rounded-lg lg:w-[25%]">
+    <div className="hidden h-auto lg:flex flex-col  font-inter bg-[#DFE1FF] px-3 py-8 rounded-lg lg:w-[25%]">
       <div className="flex items-center gap-1.5">
         <img src="/image/payNestLogo.svg" alt="logo" className="w-9 md:w-12" />
         <h1 className="text-[#474ED3] text-[28px] font-bold">PayNest</h1>

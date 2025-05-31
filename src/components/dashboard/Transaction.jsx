@@ -1,9 +1,12 @@
+import { useUser } from "@/context/userContext";
 import TransactionCard from "@/ui/Cards/TransactionCard";
 import TransactionNull from "@/ui/null/TransactionNull";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Transaction = ({ transation }) => {
+const Transaction = () => {
+    const {transation} = useUser()
+  
   const showNullState = transation.length > 0;
 
   return (

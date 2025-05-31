@@ -1,6 +1,10 @@
+import { useUser } from "@/context/userContext";
 import React from "react";
 
-const Reports = ({transation}) => {
+const Reports = () => {
+    const {transation} = useUser()
+  
+
     const incomeTypes = ["receive", "loan"];
 const expendTypes = ["sent"];
 const income = transation.filter(tx =>
