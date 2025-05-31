@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const SideNav = () => {
-  const [active, setActive] = useState("dashboard"); // default active
+  const location = useLocation();
 
-  const getColor = (name) => (active === name ? "#474ED3 " : "#949494");
-
+const isActive = (exactPath) => location.pathname === exactPath;
+const getColor = (exactPath) => (isActive(exactPath) ? "#474ED3" : "#949494");
+const getBgClass = (exactPath) => (isActive(exactPath) ? "bg-[#D2D4FF]" : "");
   return (
     <div className="hidden h-auto lg:flex flex-col  font-inter bg-[#DFE1FF] px-3 py-8 rounded-lg lg:w-[25%]">
       <div className="flex items-center gap-1.5">
@@ -17,11 +18,8 @@ const SideNav = () => {
         {/* Dashboard */}
         <Link
           to="/dashboard"
-          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
-            active === "dashboard" ? "bg-[#D2D4FF]" : ""
-          }`}
-          onClick={() => setActive("dashboard")}
-          style={{ color: getColor("dashboard") }}
+         className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass("/dashboard")}`}
+          style={{ color: getColor("/dashboard") }}
         >
           <svg
             width="24"
@@ -32,7 +30,7 @@ const SideNav = () => {
           >
             <path
               d="M5.38333 2.47461C4.75123 2.47461 4.14502 2.72114 3.69806 3.15998C3.2511 3.59881 3 4.194 3 4.81461V9.13461C3 9.4419 3.06165 9.74619 3.18142 10.0301C3.30119 10.314 3.47675 10.5719 3.69806 10.7892C4.14502 11.2281 4.75123 11.4746 5.38333 11.4746H7.95C8.5821 11.4746 9.18831 11.2281 9.63527 10.7892C10.0822 10.3504 10.3333 9.75522 10.3333 9.13461V4.81461C10.3333 4.194 10.0822 3.59881 9.63527 3.15998C9.18831 2.72114 8.5821 2.47461 7.95 2.47461H5.38333ZM5.38333 13.2746C4.75123 13.2746 4.14502 13.5211 3.69806 13.96C3.2511 14.3988 3 14.994 3 15.6146V18.1346C3 18.7552 3.2511 19.3504 3.69806 19.7892C4.14502 20.2281 4.75123 20.4746 5.38333 20.4746H7.95C8.5821 20.4746 9.18831 20.2281 9.63527 19.7892C10.0822 19.3504 10.3333 18.7552 10.3333 18.1346V15.6146C10.3333 14.994 10.0822 14.3988 9.63527 13.96C9.18831 13.5211 8.5821 13.2746 7.95 13.2746H5.38333ZM14.55 2.47461C13.9179 2.47461 13.3117 2.72114 12.8647 3.15998C12.4178 3.59881 12.1667 4.194 12.1667 4.81461V7.33461C12.1667 7.95522 12.4178 8.5504 12.8647 8.98924C13.3117 9.42807 13.9179 9.67461 14.55 9.67461H17.1167C17.4297 9.67461 17.7396 9.61408 18.0287 9.49649C18.3179 9.37889 18.5806 9.20653 18.8019 8.98924C19.0233 8.77195 19.1988 8.51399 19.3186 8.23009C19.4384 7.94619 19.5 7.6419 19.5 7.33461V4.81461C19.5 4.50732 19.4384 4.20303 19.3186 3.91913C19.1988 3.63523 19.0233 3.37727 18.8019 3.15998C18.5806 2.94269 18.3179 2.77033 18.0287 2.65273C17.7396 2.53514 17.4297 2.47461 17.1167 2.47461H14.55ZM14.55 11.4746C13.9179 11.4746 13.3117 11.7211 12.8647 12.16C12.4178 12.5988 12.1667 13.194 12.1667 13.8146V18.1346C12.1667 18.7552 12.4178 19.3504 12.8647 19.7892C13.3117 20.2281 13.9179 20.4746 14.55 20.4746H17.1167C17.4297 20.4746 17.7396 20.4141 18.0287 20.2965C18.3179 20.1789 18.5806 20.0065 18.8019 19.7892C19.0233 19.5719 19.1988 19.314 19.3186 19.0301C19.4384 18.7462 19.5 18.4419 19.5 18.1346V13.8146C19.5 13.5073 19.4384 13.203 19.3186 12.9191C19.1988 12.6352 19.0233 12.3773 18.8019 12.16C18.5806 11.9427 18.3179 11.7703 18.0287 11.6527C17.7396 11.5351 17.4297 11.4746 17.1167 11.4746H14.55Z"
-              fill={getColor("dashboard")}
+              fill={getColor("/dashboard")}
             />
           </svg>
           Dashboard
@@ -41,11 +39,8 @@ const SideNav = () => {
         {/* Transaction */}
         <Link
           to="/dashboard/transaction"
-          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
-            active === "transactions" ? "bg-[#D2D4FF]" : ""
-          }`}
-          onClick={() => setActive("transactions")}
-          style={{ color: getColor("transactions") }}
+          className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass("/dashboard/transaction")}`}
+          style={{ color: getColor("/dashboard/transaction") }}
         >
           <svg
             width="24"
@@ -56,14 +51,14 @@ const SideNav = () => {
           >
             <path
               d="M19.5 3.47461H4.5C4.10218 3.47461 3.72064 3.63264 3.43934 3.91395C3.15804 4.19525 3 4.57678 3 4.97461V19.9746C3 20.3724 3.15804 20.754 3.43934 21.0353C3.72064 21.3166 4.10218 21.4746 4.5 21.4746H19.5C19.8978 21.4746 20.2794 21.3166 20.5607 21.0353C20.842 20.754 21 20.3724 21 19.9746V4.97461C21 4.57678 20.842 4.19525 20.5607 3.91395C20.2794 3.63264 19.8978 3.47461 19.5 3.47461Z"
-              stroke={getColor("transactions")}
+              stroke={getColor("/dashboard/transaction")}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M10.5 15.9746L13 17.9746L17 12.9746M7 7.97461H17M7 11.9746H11"
-              stroke={getColor("transactions")}
+              stroke={getColor("/dashboard/transaction")}
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -74,11 +69,8 @@ const SideNav = () => {
 
         {/* Cards */}
         <button
-          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
-            active === "cards" ? "bg-[#D2D4FF]" : ""
-          }`}
-          onClick={() => setActive("cards")}
-          style={{ color: getColor("cards") }}
+         className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass("/dashboard/cards")}`}
+          style={{ color: getColor("/dashboard/cards") }}
         >
           <svg
             width="24"
@@ -100,11 +92,8 @@ const SideNav = () => {
 
         {/* Notifications */}
         <button
-          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
-            active === "notifications" ? "bg-[#D2D4FF]" : ""
-          }`}
-          onClick={() => setActive("notifications")}
-          style={{ color: getColor("notifications") }}
+          className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass("/dashboard/notifications")}`}
+          style={{ color: getColor("/dashboard/notifications") }}
         >
           <svg
             width="24"
@@ -126,11 +115,8 @@ const SideNav = () => {
 
         {/* Report */}
         <button
-          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
-            active === "report" ? "bg-[#D2D4FF]" : ""
-          }`}
-          onClick={() => setActive("report")}
-          style={{ color: getColor("report") }}
+         className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass("/dashboard/report")}`}
+          style={{ color: getColor("/dashboard/report") }}
         >
           <svg
             width="24"
@@ -158,11 +144,8 @@ const SideNav = () => {
         </button>
         {/* Support */}
         <button
-          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
-            active === "Support" ? "bg-[#D2D4FF]" : ""
-          }`}
-          onClick={() => setActive("Support")}
-          style={{ color: getColor("Support") }}
+         className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass("/dashboard/support")}`}
+          style={{ color: getColor("/dashboard/support") }}
         >
           <svg
             width="24"
@@ -182,11 +165,8 @@ const SideNav = () => {
         </button>
         {/* Settings */}
         <button
-          className={`flex cursor-pointer  items-center gap-2 px-2 py-[8px] duration-300 ease-in-out rounded-[4px]  ${
-            active === "Settings" ? "bg-[#D2D4FF]" : ""
-          }`}
-          onClick={() => setActive("Settings")}
-          style={{ color: getColor("Settings") }}
+         className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass("/dashboard/settings")}`}
+          style={{ color: getColor("/dashboard/settings") }}
         >
           <svg
             width="24"

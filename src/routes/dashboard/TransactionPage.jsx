@@ -5,7 +5,7 @@ import React from "react";
 
 const TransactionPage = () => {
   return (
-    <div className=" lg:bg-[#FDFDFF] h-screen lg:h-auto lg:px-4 rounded-lg ">
+    <div className=" lg:bg-[#FDFDFF]  lg:h-auto lg:px-4 rounded-lg ">
       <Transaction />
       <DesktopTransa />
     </div>

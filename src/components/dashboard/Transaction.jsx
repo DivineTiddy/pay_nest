@@ -1,4 +1,5 @@
 import { useUser } from "@/context/userContext";
+import BackButton from "@/ui/buttons/BackButton";
 import TransactionCard from "@/ui/Cards/TransactionCard";
 import TransactionNull from "@/ui/null/TransactionNull";
 import React from "react";
@@ -18,9 +19,13 @@ const Transaction = () => {
       } w-full p-4 lg:p-0 flex flex-col gap-4  font-inter   lg:mt-14 lg:hidden`}
     >
       {pathName ? (
+         <div className="flex justify-between">
+           <BackButton />
         <h1 className="font-semibold text-center text-base lg:text-[22px] text-[#242424]">
           Transaction
         </h1>
+        <p></p>
+         </div>
       ) : (
         <div className="flex items-center justify-between">
           <h1 className="font-semibold text-base lg:text-[22px] text-[#242424]">
