@@ -11,7 +11,6 @@ const Login = () => {
   const [showBalance, setShowBalance] = useState(false);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-
   const { register, handleSubmit, watch } = useForm();
   const onSubmit = async (data) => {
     try {

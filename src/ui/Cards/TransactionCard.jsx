@@ -19,7 +19,7 @@ const TransactionCard = ({item}) => {
     minimumFractionDigits: 2,
   }).format(item.amount);
   return (
-    <div className="flex items-center justify-between border-t-[1px] border-[#F2F2F2] py-2.5">
+    <div className="flex items-center justify-between px-1 rounded-lg bg-[#FDFDFF] border-t-[1px] border-[#F2F2F2] py-2.5">
       <div className="flex items-center gap-3">
         <div
           className={`${

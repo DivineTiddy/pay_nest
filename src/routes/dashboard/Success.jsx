@@ -5,7 +5,7 @@ const Success = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { email, amount } = location.state || {};
-  console.log(location);
+
   return (
     <div className="flex items-center justify-center h-screen w-full bg-[#F5F5F5] px-3 lg:px-0">
       <div className="w-full lg:w-[500px]  rounded-2xl bg-[#FDFDFF] py-10 px-8 flex flex-col gap-5 items-center">
