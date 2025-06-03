@@ -9,7 +9,7 @@ import { TopDashBoardNav } from "@/components/nav/DashBoardNav";
 const Index = () => {
   return (
     <>
-      <div className="lg:flex gap-6 w-[80%] ">
+      <div className="lg:flex gap-6 lg:w-[80%] ">
         <div className=" lg:px-5 lg:bg-[#FDFDFF] w-full lg:rounded-lg">
           <TopDashBoardNav />
           <Balance_ui />
