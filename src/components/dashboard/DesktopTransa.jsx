@@ -74,7 +74,12 @@ const DesktopTransa = () => {
                 </button>
 
                 <span className="text-sm font-simebold">
-                  {currentPage}/<span className={`${ currentPage === 1 ? "text-[#C7C7C7]":""}`}>{totalPages}</span>
+                  {currentPage}/
+                  <span
+                    className={`${currentPage === 1 ? "text-[#C7C7C7]" : ""}`}
+                  >
+                    {totalPages}
+                  </span>
                 </span>
 
                 <button

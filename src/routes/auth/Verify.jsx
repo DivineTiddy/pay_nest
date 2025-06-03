@@ -15,7 +15,6 @@ const Verify = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [otp, setOtp] = useState("");
   const navigate = useNavigate();
-  // const email = getCookie();
     const {email } = getCookie();
   
 
@@ -30,7 +29,7 @@ const Verify = () => {
         autoClose: 5000,
         transition: Zoom,
       });
-      navigate("/dashboard");
+      navigate("/login");
     } catch (error) {
       const { response } = error;
       toast.error(`${response?.data?.error || "Verification failed"}`, {

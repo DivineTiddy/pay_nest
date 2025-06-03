@@ -1,6 +1,6 @@
 // context/TransactionContext.jsx
 import { userCredential } from "@/hooks/users";
-import { setCookie } from "@/manager/cookies";
+import { deleteCookies, setCookie } from "@/manager/cookies";
 import React, { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, Zoom } from "react-toastify";
@@ -12,6 +12,8 @@ export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [Unauthorized , setUnauthorized] = useState(null)
+  const [user, setUser] = useState(null);
+
   const navigate = useNavigate();
   const getUser = async () => {
     try {
@@ -19,11 +21,12 @@ export const UserProvider = ({ children }) => {
       const responses = await userCredential();
       setCookie(responses.data);
       setTransation(responses.transation);
+        setUser(responses.user); 
     } catch (error) {
       setError(true);
       const Unauthorized = error.response.data.message;
       if (Unauthorized === "Unauthorized") {
-        setCookie({ accessToken: "" });
+        deleteCookies()
         navigate("/login");
         setUnauthorized(true)
       }
@@ -44,7 +47,7 @@ export const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{ transation, loading, error , getUser , Unauthorized }}>
+    <UserContext.Provider value={{user , transation, loading, error , getUser , Unauthorized }}>
       {children}
     </UserContext.Provider>
   );

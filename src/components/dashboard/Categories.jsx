@@ -61,7 +61,7 @@ const Categories = () => {
           to={item.link}
         >
           <div
-            className={`${item.color} rounded-[10px] lg:rounded-2xl p-2 lg:p-4 flex items-center justify-center`}
+            className={`${item.color} rounded-[10px] lg:rounded-2xl p-3.5 lg:p-4 flex items-center justify-center`}
           >
             <img src={item.icon} alt="icon" className="w-7 lg:w-10" />
           </div>

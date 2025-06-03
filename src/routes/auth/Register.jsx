@@ -1,5 +1,5 @@
 import { registration } from "@/hooks/auth";
-import { setCookie } from "@/manager/cookies";
+import { accessTokenCookie, setCookie } from "@/manager/cookies";
 import Loarder from "@/ui/loader/Loarder";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -29,7 +29,8 @@ const Register = () => {
     try {
       setIsLoading(true);
       const responses = await registration(userWithBalance);
-      setCookie(responses.data, responses.accessToken);
+      setCookie(responses.data);
+      accessTokenCookie(responses.accessToken)
       toast.success("register success", {
         position: "top-right",
         autoClose: 5000,

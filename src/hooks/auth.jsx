@@ -22,7 +22,8 @@ export const login = async (credential) => {
 };
 
 export const verification = async (code) => {
-  const email = getCookie();
+  const {email} = getCookie();
+  console.log(email)
 
   const credential = {
     emailCode: code,
@@ -33,5 +34,6 @@ export const verification = async (code) => {
       "Content-Type": "application/json",
     },
   });
+  console.log(data)
   return data;
 };

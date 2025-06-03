@@ -6,18 +6,20 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const Send = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, watch } = useForm();
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
-  const [getEmail, setEmail] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
 
+  const userEmail = watch("email");
+  const userAmount = watch("amount");
+  const userRemark = watch("remark");
   useEffect(() => {
-    if (!getEmail) return;
+    if (!userEmail) return;
     const get = async () => {
       try {
         setIsLoading(true);
-        const result = await userName(getEmail);
+        const result = await userName(userEmail);
         setUser(result.data);
       } catch (error) {
         console.log(error.response.data.message);
@@ -27,9 +29,11 @@ const Send = () => {
       }
     };
     get();
-  }, [getEmail]);
+  }, [userEmail]);
 
   const onSubmit = (data) => {
+    console.log(data.email);
+
     const userData = {
       data,
       user,
@@ -53,43 +57,49 @@ const Send = () => {
           className="mt-10 rounded-2xl bg-[#FDFDFF] py-10 px-4 lg:px-8 flex flex-col gap-4 items-center"
         >
           <div className="flex flex-col gap-2 w-full">
-            <label className="text-[#767676] font-normal text-base">
+            <label className="text-[#2B2B2B] font-normal text-base">
               Receiver’s Email
             </label>
             <input
               {...register("email", { required: true })}
+              // onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-              className=" outline-0 text-base font-normal text-[#767676] border-[1px] border-[#E2E2E2] py-3 px-2 rounded-[8px]"
+              className={`outline-0 text-base font-normal text-[#2B2B2B] border-[1px] ${
+                userEmail ? "border-[#474ED3]" : "border-[#E2E2E2]"
+              } py-3 px-2 rounded-[8px]`}
             />
             {user && (
-              <div className=" bg-[#F1F1F1] w-full rounded-[4px] py-3.5 px-4 text-[#767676] font-semibold text-base duration-300 ease-in-out">
+              <div className=" bg-[#F1F1F1] w-full rounded-[4px] py-3.5 px-4 text-[#2B2B2B] font-semibold text-base duration-300 ease-in-out">
                 {isLoading && <GetUser />}
                 {!isLoading && user}
               </div>
             )}
           </div>
           <div className="flex flex-col gap-2 w-full">
-            <label className="text-[#767676] font-normal text-base">
+            <label className="text-[#2B2B2B] font-normal text-base">
               Amount
             </label>
             <input
               {...register("amount", { required: true })}
               type="text"
               placeholder="0.00"
-              className=" outline-0 text-base font-normal text-[#767676] border-[1px] border-[#E2E2E2] py-3 px-2 rounded-[8px]"
+              className={`outline-0 text-base font-normal text-[#2B2B2B] border-[1px] ${
+                userAmount ? "border-[#474ED3]" : "border-[#E2E2E2]"
+              } py-3 px-2 rounded-[8px]`}
             />
           </div>
           <div className="flex flex-col gap-2 w-full">
-            <label className="text-[#767676] font-normal text-base">
+            <label className="text-[#2B2B2B] font-normal text-base">
               Description
             </label>
             <input
               {...register("remark", { required: true })}
               type="text"
               placeholder="Reason for transaction"
-              className=" outline-0 text-base font-normal text-[#767676] border-[1px] border-[#E2E2E2] py-3 px-2 rounded-[8px]"
+              className={`outline-0 text-base font-normal text-[#2B2B2B] border-[1px]  ${
+                userRemark ? "border-[#474ED3]" : "border-[#E2E2E2]"
+              } py-3 px-2 rounded-[8px]`}
             />
           </div>
           <button className="bg-[#474ED3] cursor-pointer mt-11 w-full rounded-[8px] py-3.5 px-6 font-bold text-base text-[#F3F3FF]">

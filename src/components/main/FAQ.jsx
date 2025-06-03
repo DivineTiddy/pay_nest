@@ -5,37 +5,35 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
-import {  Element } from "react-scroll";
-
+import { Element } from "react-scroll";
 
 const data = ["General", "Transfer", "Failed Transaction", "Support"];
 const accordionData = [
   {
     title: "How secure is Paynest?",
     describetion:
-      "Paynest uses bank-grade encryption, biometric authentication, and real-time fraud monitoring to keep your money and personal information safe at all times.",
-  },
-  {
-    title: "How secure is Paynest?",
-    describetion:
-      "Paynest uses bank-grade encryption, biometric authentication, and real-time fraud monitoring to keep your money and personal information safe at all times.",
-  },
-  {
-    title: "How secure is Paynest?",
-    describetion:
-      "Paynest uses bank-grade encryption, biometric authentication, and real-time fraud monitoring to keep your money and personal information safe at all times.",
-  },
-  {
-    title: "Can I send money to someone who doesn’t use Paynest?",
-    describetion:
-      "Paynest uses bank-grade encryption, biometric authentication, and real-time fraud monitoring to keep your money and personal information safe at all times.",
+      "Yes! You can send money to anyone using their bank account or phone number, even if they haven’t signed up for Paynest yet.",
   },
   {
     title: "What fees should I expect when using Paynest?",
     describetion:
+      "Most transactions on Paynest are free, including peer-to-peer transfers. We only charge minimal fees for certain services like cross-border transfers or bill payments, and we always show you the fee upfront.",
+  },
+  {
+    title: "How long do transfers take?",
+    describetion:
       "Paynest uses bank-grade encryption, biometric authentication, and real-time fraud monitoring to keep your money and personal information safe at all times.",
   },
-
+  {
+    title: "How long do transfers take?",
+    describetion:
+      "Local transfers are instant. International transfers may take a few minutes to a few hours depending on the destination and receiving bank.",
+  },
+  {
+    title: "What happens if I send money to the wrong account?",
+    describetion:
+      "If you send money to the wrong recipient, please contact our support team immediately. We’ll do our best to help recover the funds, depending on the transaction status.",
+  },
 ];
 
 const FAQ = () => {
@@ -44,7 +42,10 @@ const FAQ = () => {
   // const [more, setMore] = useState(false);
 
   return (
-    <Element name="Blogs" className="mt-30  md:justify-center flex flex-col items-center">
+    <Element
+      name="Blogs"
+      className="mt-30  md:justify-center flex flex-col items-center"
+    >
       <div className="text-center space-y-5 md:space-y-9 md:w-[45%]">
         <h1 className="text-[#2B2B2B] font-inter font-bold text-[24px] px-10 md:px-0 md:text-[45px] leading-8 md:leading-13">
           Frequently Asked Questions{" "}
@@ -94,13 +95,13 @@ const FAQ = () => {
             >
               {items.title}
             </AccordionTrigger>
-            <AccordionContent className="text-xs md:text-sm">{items.describetion}</AccordionContent>
+            <AccordionContent className="text-xs md:text-sm">
+              {items.describetion}
+            </AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
-      <button
-        className="bg-[#474ED3] text-[#F0F1FF] mt-8 font-inter font-bold rounded-sm px-5 py-2 cursor-pointer"
-      >
+      <button className="bg-[#474ED3] text-[#F0F1FF] mt-8 font-inter font-bold rounded-sm px-5 py-2 cursor-pointer">
         See More
       </button>
     </Element>

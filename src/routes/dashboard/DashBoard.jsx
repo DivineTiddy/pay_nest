@@ -11,7 +11,6 @@ const DashBoard = () => {
   const { loading, error, getUser } = useUser();
 
 
-
   useEffect(() => {
     getUser();
   }, []);

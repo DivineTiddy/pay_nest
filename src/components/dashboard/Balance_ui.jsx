@@ -24,7 +24,7 @@ const Balance_ui = () => {
               Available balance
             </p>
             {showBalance ? (
-              <h1 className="font-bold text-2xl text-[#E8E9FF] lg:text-3xl lg:mt-5 lg:tracking-wide">
+              <h1 className="font-bold text-2xl text-[#E8E9FF] lg:text-3xl lg:mt-2 lg:tracking-wide">
                {formattedAmount}
                 
               </h1>

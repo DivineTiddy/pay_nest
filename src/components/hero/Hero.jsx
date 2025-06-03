@@ -15,7 +15,7 @@ const Hero = () => {
           <LazyLoadImage
             src="\icon\fast.svg"
             alt="icon"
-            className="w-50"
+            className="w-50 mt-10 lg:mt-0"
           />
           <h1 className="text-[#2B2B2B] font-bold text-[33px] lg:text-[60px] lg:leading-20">
             Banking That <br /> Feels Like Home.

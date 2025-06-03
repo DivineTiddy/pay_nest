@@ -8,8 +8,9 @@ import { toast, Zoom } from "react-toastify";
 
 const Loan = () => {
   const [loading, setLoading] = useState(false);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, watch } = useForm();
   const navigate = useNavigate();
+  const userAmount = watch("amount");
 
   const onSubmit = async (data) => {
     const { amount } = data;
@@ -54,12 +55,14 @@ const Loan = () => {
         className="w-full lg:w-[500px] lg:mt-9  mt-10 rounded-2xl bg-[#FDFDFF] py-5 px-5 flex flex-col gap-5 items-center"
       >
         <div className="flex flex-col gap-2 w-full">
-          <label className="text-[#767676] font-normal text-base">Amount</label>
+          <label className="text-[#2B2B2B] font-normal text-base">Amount</label>
           <input
             {...register("amount", { required: true })}
             type="text"
             placeholder="0.00"
-            className=" outline-0 text-base font-normal text-[#767676] border-[1px] border-[#E2E2E2] py-3 px-2 rounded-[8px]"
+            className={`outline-0 text-base font-normal text-[#2B2B2B] border-[1px] ${
+              userAmount ? "border-[#474ED3]" : "border-[#E2E2E2]"
+            } py-3 px-2 rounded-[8px]`}
           />
         </div>
         <button
