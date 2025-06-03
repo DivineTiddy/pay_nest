@@ -11,12 +11,15 @@ import Success from "./routes/dashboard/Success";
 import Loan from "./routes/dashboard/Loan";
 import Index from "./routes/dashboard/Index";
 import TransactionPage from "./routes/dashboard/TransactionPage";
+import { UserProvider } from "./context/userContext";
+
 const App = () => {
   return (
     <>
       <ToastContainer />
       <HashRouter>
-        <Routes>
+        <UserProvider>
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/verify" element={<Verify />} />
           <Route path="/register" element={<Register />} />
@@ -30,6 +33,7 @@ const App = () => {
           <Route path="/success" element={<Success />} />
           <Route path="/loan" element={<Loan />} />
         </Routes>
+        </UserProvider>
       </HashRouter>
     </>
   );

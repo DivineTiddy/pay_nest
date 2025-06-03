@@ -1,20 +1,46 @@
+import { userName } from "@/hooks/users";
 import BackButton from "@/ui/buttons/BackButton";
-import React from "react";
+import GetUser from "@/ui/loader/GetUser";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const Send = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+  const [getEmail, setEmail] = useState(null);
+  const [isLoading, setIsLoading] = useState(null);
+
+  useEffect(() => {
+    if (!getEmail) return;
+    const get = async () => {
+      try {
+        setIsLoading(true);
+        const result = await userName(getEmail);
+        setUser(result.data);
+      } catch (error) {
+        console.log(error.response.data.message);
+        setUser(error.response.data.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    get();
+  }, [getEmail]);
 
   const onSubmit = (data) => {
-    navigate("/details", { state: data });
+    const userData = {
+      data,
+      user,
+    };
+    navigate("/details", { state: userData });
   };
   return (
     <div className="flex lg:items-center justify-center h-screen w-full bg-[#F5F5F5] px-5 lg:px-0">
       <div className=" mt-16 lg:mt-0 w-full lg:w-[500px]">
         <div className="w-full lg:w-[500px] flex items-center justify-between lg:justify-center">
-          <BackButton/>
+          <BackButton />
           <h1 className="font-bold text-center text-[20px] text-[#2B2B2B]">
             {" "}
             Send Money
@@ -34,8 +60,15 @@ const Send = () => {
               {...register("email", { required: true })}
               type="email"
               placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
               className=" outline-0 text-base font-normal text-[#767676] border-[1px] border-[#E2E2E2] py-3 px-2 rounded-[8px]"
             />
+            {user && (
+              <div className=" bg-[#F1F1F1] w-full rounded-[4px] py-3.5 px-4 text-[#767676] font-semibold text-base duration-300 ease-in-out">
+                {isLoading && <GetUser />}
+                {!isLoading && user}
+              </div>
+            )}
           </div>
           <div className="flex flex-col gap-2 w-full">
             <label className="text-[#767676] font-normal text-base">

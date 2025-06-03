@@ -1,6 +1,6 @@
 import SideNav from "@/components/nav/SideNav";
 import React, { useEffect } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "../../styles/scroll-bar.css";
 import Reports from "@/components/dashboard/Reports";
 import Analysis from "@/components/dashboard/Analysis";
@@ -8,12 +8,10 @@ import { useUser } from "@/context/userContext";
 import Loader from "@/ui/loader/dashBoardLoader";
 
 const DashBoard = () => {
-  const { loading, error, getUser, Unauthorized } = useUser();
-  const navigate = useNavigate();
+  const { loading, error, getUser } = useUser();
 
-  if (Unauthorized) {
-    navigate("/login");
-  }
+
+
   useEffect(() => {
     getUser();
   }, []);

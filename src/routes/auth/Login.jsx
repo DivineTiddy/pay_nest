@@ -6,12 +6,19 @@ import { login } from "@/hooks/auth";
 import { toast, Zoom } from "react-toastify";
 import Loarder from "@/ui/loader/Loarder";
 import { accessTokenCookie } from "@/manager/cookies";
+import { getCookie } from "@/manager/cookies";
 
 const Login = () => {
   const [showBalance, setShowBalance] = useState(false);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, watch } = useForm();
+  const { accessToken } = getCookie();
+
+  if (accessToken) {
+      navigate("/dashboard");
+    }
+
   const onSubmit = async (data) => {
     try {
       setIsLoading(true);

@@ -30,3 +30,12 @@ export const getCookie = () => {
   };
   return user;
 };
+
+export const deleteCookies = () => {
+  Cookies.remove("first_Name");
+  Cookies.remove("last_Name");
+  Cookies.remove("email");
+  Cookies.remove("balance");
+  Cookies.remove("accessToken");
+  Cookies.remove("transaction"); 
+};

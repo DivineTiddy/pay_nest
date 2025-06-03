@@ -9,7 +9,8 @@ const TransferDetails = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const { email, amount, remark } = location.state || {};
+  const { email, amount, remark } = location.state.data || {};
+    const { user } = location.state || {};
   const credential = {
     email,
     amount: parseFloat(amount),
@@ -27,17 +28,7 @@ const TransferDetails = () => {
     try {
       setLoading(true);
       await sentMoney(credential);
-      // toast.success("Send successfully", {
-      //   position: "top-right",
-      //   autoClose: 5000,
-      //   hideProgressBar: false,
-      //   closeOnClick: false,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: "light",
-      //   transition: Zoom,
-      // });
+    
       navigate("/success", { state: credential });
     } catch (error) {
       toast.error(`${error.response.data.error}`, {
@@ -80,7 +71,7 @@ const TransferDetails = () => {
           </div>
           <div className="flex justify-between items-center w-full">
             <p className="font-normal text-base text-[#767676]">Receiver</p>
-            <p className="text-[#2B2B2B] font-normal text-base">Ocean Ozulu</p>
+            <p className="text-[#2B2B2B] font-normal text-base">{user}</p>
           </div>
           <div className="flex justify-between items-center w-full">
             <p className="font-normal text-base text-[#767676]">Email</p>
