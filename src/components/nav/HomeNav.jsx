@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Link as Scroll } from "react-scroll";
+import { SheetClose } from "../ui/sheet";
 
 const HomeNav = () => {
   const [open, setOpen] = useState(false);
@@ -55,16 +56,40 @@ const HomeNav = () => {
       </div>
       {open && (
         <div className="duration-300 ease-in-out mt-1 w-[50%] bg-white text-base font-normal lg:hidden text-[#222222] flex flex-col gap-6 py-4 px-3 border-[1px] border-[#E9E9E9] rounded-lg drop-shadow-2xl">
-          <Scroll className="cursor-pointer" to="Personal" smooth={true} duration={900}>
+          <Scroll
+            onClick={() => setOpen(false)}
+            className="cursor-pointer"
+            to="Personal"
+            smooth={true}
+            duration={900}
+          >
             Personal
           </Scroll>
-          <Scroll className="cursor-pointer" to="About" smooth={true} duration={900}>
+          <Scroll
+            onClick={() => setOpen(false)}
+            className="cursor-pointer"
+            to="About"
+            smooth={true}
+            duration={900}
+          >
             About Us
           </Scroll>
-          <Scroll className="cursor-pointer" to="Contact" smooth={true} duration={900}>
+          <Scroll
+            onClick={() => setOpen(false)}
+            className="cursor-pointer"
+            to="Contact"
+            smooth={true}
+            duration={900}
+          >
             Contact Us
           </Scroll>
-          <Scroll className="cursor-pointer" to="Blogs" smooth={true} duration={900}>
+          <Scroll
+            onClick={() => setOpen(false)}
+            className="cursor-pointer"
+            to="Blogs"
+            smooth={true}
+            duration={900}
+          >
             Blogs
           </Scroll>
         </div>

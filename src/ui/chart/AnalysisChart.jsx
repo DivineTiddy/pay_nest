@@ -23,9 +23,9 @@ export function AnalysisChart({totalIncome , totalExpend}) {
   const chartData = [
   { browser: "Recieved", visitors: totalIncome, fill: "#CA6720" },
   { browser: "Transfer", visitors: totalExpend, fill: "#9094E8" },
-  // { browser: "firefox", visitors: 43487, fill: "#9094E8" },
-  // { browser: "edge", visitors: 56173, fill: "#333C04" },
-  // { browser: "other", visitors: 19350, fill: "#D22363" },
+  { browser: "Airtime", visitors: 0, fill: "#9094E8" },
+  { browser: "Electricity", visitors: 0, fill: "#333C04" },
+  { browser: "Subscription", visitors: 0, fill: "#D22363" },
 ];
 const chartConfig = {
   visitors: {
