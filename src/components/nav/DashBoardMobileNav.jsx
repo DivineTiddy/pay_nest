@@ -37,7 +37,7 @@ export function MobileNav() {
           </div>
 
           <div
-            className={` flex flex-col justify-between h-full  text-[18px] mt-10`}
+            className={` flex flex-col gap-40 h-full  text-[18px] mt-10`}
           >
             <div className="space-y-4">
               {/* Dashboard */}

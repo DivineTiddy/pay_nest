@@ -12,6 +12,11 @@ const accordionData = [
   {
     title: "How secure is Paynest?",
     describetion:
+      "Paynest uses bank-grade encryption, biometric authentication, and real-time fraud monitoring to keep your money and personal information safe at all times.",
+  },
+  {
+    title: "Can I send money to someone who doesn’t use Paynest?",
+    describetion:
       "Yes! You can send money to anyone using their bank account or phone number, even if they haven’t signed up for Paynest yet.",
   },
   {
@@ -22,13 +27,9 @@ const accordionData = [
   {
     title: "How long do transfers take?",
     describetion:
-      "Paynest uses bank-grade encryption, biometric authentication, and real-time fraud monitoring to keep your money and personal information safe at all times.",
-  },
-  {
-    title: "How long do transfers take?",
-    describetion:
       "Local transfers are instant. International transfers may take a few minutes to a few hours depending on the destination and receiving bank.",
   },
+
   {
     title: "What happens if I send money to the wrong account?",
     describetion:
