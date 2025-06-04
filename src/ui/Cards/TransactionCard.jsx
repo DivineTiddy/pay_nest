@@ -61,7 +61,7 @@ const TransactionCard = ({item}) => {
         >
           {isIncome ? "+" : "-"} {formattedAmount}
         </p>
-        <div className="bg-[#F3F3F3] py-1.5 px-2 rounded-[32px]">
+        <div className="bg-[#F3F3F3] py-1 px-1.5 rounded-[32px]">
           <p className="font-normal text-[10px] tracking-[0.5px]">Successful</p>
         </div>
       </div>
