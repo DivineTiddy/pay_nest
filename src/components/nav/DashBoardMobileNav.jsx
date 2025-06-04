@@ -30,7 +30,7 @@ export function MobileNav() {
         </button>
       </SheetTrigger>
       <SheetContent className="w-[60%] h-screen" side="left">
-        <div className=" h-screen overflow-auto  flex-col  font-inter bg-[#DFE1FF] px-3 py-3  hide-scrollbar">
+        <div className=" h-screen   flex-col  font-inter bg-[#DFE1FF] px-3 py-3  hide-scrollbar">
           <div className="flex items-center gap-2">
             <img src="/image/payNestLogo.svg" alt="logo" className="w-9 " />
             <h1 className="text-[#474ED3] text-[20px] font-bold">PayNest</h1>
