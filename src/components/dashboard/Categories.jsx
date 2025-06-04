@@ -53,7 +53,7 @@ const items = [
 
 const Categories = () => {
   return (
-    <div className="bg-[#FDFDFF] p-4 lg:p-0 w-full mt-4 md:mt-0 font-inter flex justify-between lg:mt-12">
+    <div className="bg-[#FDFDFF] p-4 lg:p-0 w-full mt-4 mb-4 md:mt-0 font-inter flex justify-between lg:mt-12">
       {items.map((item, index) => (
         <Link
           key={index + 1}
