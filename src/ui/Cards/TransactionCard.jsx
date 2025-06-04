@@ -53,7 +53,7 @@ const TransactionCard = ({item}) => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-2 items-end">
+      <div className="flex flex-col gap-1 items-end">
         <p
           className={`${
            isIncome  ? "text-[#379216]" : "text-[#D41818]"
@@ -62,7 +62,7 @@ const TransactionCard = ({item}) => {
           {isIncome ? "+" : "-"} {formattedAmount}
         </p>
         <div className="bg-[#F3F3F3] py-1.5 px-2 rounded-[32px]">
-          <p className="font-normal text-xs tracking-[0.5px]">Successful</p>
+          <p className="font-normal text-[10px] tracking-[0.5px]">Successful</p>
         </div>
       </div>
     </div>
