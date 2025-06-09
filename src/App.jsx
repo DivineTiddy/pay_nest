@@ -12,6 +12,7 @@ import Loan from "./routes/dashboard/Loan";
 import Index from "./routes/dashboard/Index";
 import TransactionPage from "./routes/dashboard/TransactionPage";
 import { UserProvider } from "./context/userContext";
+import NotFoundPage from "./ui/null/NotFoundPage";
 
 const App = () => {
   return (
@@ -20,19 +21,23 @@ const App = () => {
       <HashRouter>
         <UserProvider>
           <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/verify" element={<Verify />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<DashBoard />}>
-            <Route index element={<Index />} />
-            <Route path="/dashboard/transaction" element={<TransactionPage />} />
-          </Route>
-          <Route path="/send" element={<Send />} />
-          <Route path="/details" element={<TransferDetails />} />
-          <Route path="/success" element={<Success />} />
-          <Route path="/loan" element={<Loan />} />
-        </Routes>
+            <Route path="*" element={<NotFoundPage />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/verify" element={<Verify />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<DashBoard />}>
+              <Route index element={<Index />} />
+              <Route
+                path="/dashboard/transaction"
+                element={<TransactionPage />}
+              />
+            </Route>
+            <Route path="/send" element={<Send />} />
+            <Route path="/details" element={<TransferDetails />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/loan" element={<Loan />} />
+          </Routes>
         </UserProvider>
       </HashRouter>
     </>

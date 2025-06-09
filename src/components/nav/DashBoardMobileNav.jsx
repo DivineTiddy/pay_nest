@@ -15,9 +15,9 @@ export function MobileNav() {
   const location = useLocation();
 
   const isActive = (exactPath) => location.pathname === exactPath;
-  const getColor = (exactPath) => (isActive(exactPath) ? "#474ED3" : "#949494");
+  const getColor = (exactPath) => (isActive(exactPath) ? "#F2F2FF" : "#767676");
   const getBgClass = (exactPath) =>
-    isActive(exactPath) ? "bg-[#D2D4FF] font-semibold" : "font-normal";
+    isActive(exactPath) ? "bg-[#4B52E8] font-semibold" : "font-normal";
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -30,8 +30,8 @@ export function MobileNav() {
         </button>
       </SheetTrigger>
       <SheetContent className="w-[60%] h-screen" side="left">
-        <div className=" h-screen   flex-col  font-inter bg-[#DFE1FF] px-3 py-3  hide-scrollbar">
-          <div className="flex items-center gap-2">
+        <div className=" h-screen   flex-col  font-inter bg-[#DFE1FF]  py-3  hide-scrollbar">
+          <div className="flex items-center gap-2 px-2">
             <img src="/image/payNestLogo.svg" alt="logo" className="w-9 " />
             <h1 className="text-[#474ED3] text-[20px] font-bold">PayNest</h1>
           </div>
@@ -43,7 +43,7 @@ export function MobileNav() {
               {/* Dashboard */}
               <Link
                 to="/dashboard"
-                className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass(
+                className={`flex items-center gap-2 px-2 py-[8px] duration-300  ${getBgClass(
                   "/dashboard"
                 )}`}
                 style={{ color: getColor("/dashboard") }}
@@ -66,7 +66,7 @@ export function MobileNav() {
               {/* Transaction */}
               <Link
                 to="/dashboard/transaction"
-                className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass(
+                className={`flex items-center gap-2 px-2 py-[8px] duration-300  ${getBgClass(
                   "/dashboard/transaction"
                 )}`}
                 style={{ color: getColor("/dashboard/transaction") }}
@@ -98,7 +98,7 @@ export function MobileNav() {
 
               {/* Cards */}
               <button
-                className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass(
+                className={`flex items-center gap-2 px-2 py-[8px] duration-300  ${getBgClass(
                   "/dashboard/cards"
                 )}`}
                 style={{ color: getColor("/dashboard/cards") }}
@@ -123,7 +123,7 @@ export function MobileNav() {
 
               {/* Notifications */}
               <button
-                className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass(
+                className={`flex items-center gap-2 px-2 py-[8px] duration-300  ${getBgClass(
                   "/dashboard/notifications"
                 )}`}
                 style={{ color: getColor("/dashboard/notifications") }}
@@ -148,7 +148,7 @@ export function MobileNav() {
 
               {/* Report */}
               <button
-                className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass(
+                className={`flex items-center gap-2 px-2 py-[8px] duration-300  ${getBgClass(
                   "/dashboard/report"
                 )}`}
                 style={{ color: getColor("/dashboard/report") }}
@@ -179,7 +179,7 @@ export function MobileNav() {
               </button>
               {/* Support */}
               <button
-                className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass(
+                className={`flex items-center gap-2 px-2 py-[8px] duration-300  ${getBgClass(
                   "/dashboard/support"
                 )}`}
                 style={{ color: getColor("/dashboard/support") }}
@@ -204,7 +204,7 @@ export function MobileNav() {
             <div className="space-y-4">
               {/* Settings */}
               <button
-                className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass(
+                className={`flex items-center gap-2 px-2 py-[8px] duration-300  ${getBgClass(
                   "/dashboard/settings"
                 )}`}
                 style={{ color: getColor("/dashboard/settings") }}
@@ -237,7 +237,7 @@ export function MobileNav() {
               <Link
                 onClick={deleteCookies}
                 to="/"
-                className={`flex items-center gap-2 px-2 py-[8px] duration-300 rounded-[4px] ${getBgClass(
+                className={`flex items-center gap-2 px-2 py-[8px] duration-300  ${getBgClass(
                   "/"
                 )}`}
                 style={{ color: getColor("/") }}
