@@ -29,7 +29,7 @@ export function MobileNav() {
           />
         </button>
       </SheetTrigger>
-      <SheetContent className="w-[60%] " side="left">
+      <SheetContent className="w-[60%] overflow-auto" side="left">
         <div className="    flex-col  font-inter bg-[#DFE1FF]  py-3  hide-scrollbar">
           <div className="flex items-center gap-2 px-2">
             <img src="/image/payNestLogo.svg" alt="logo" className="w-9 " />
@@ -37,7 +37,7 @@ export function MobileNav() {
           </div>
 
           <div
-            className={` flex flex-col h-screen gap-3  text-[18px] mt-10`}
+            className={` flex flex-col   h-screen gap-3 text-[18px] mt-10`}
           >
             <div className="space-y-4">
               {/* Dashboard */}
