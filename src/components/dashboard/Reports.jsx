@@ -15,14 +15,14 @@ const expend = transation.filter(tx =>
 );
 const totalIncome = income.reduce((sum, tx) => sum + Number(tx.amount), 0);
 const totalExpend = expend.reduce((sum, tx) => sum + Number(tx.amount), 0);
-  const formattedAmountIncome = new Intl.NumberFormat("en-NG", {
+  const formattedAmountIncome = new Intl.NumberFormat("en-US", {
   style: "currency",
-  currency: "NGN",
+  currency: "USD",
   minimumFractionDigits: 2,
 }).format(totalIncome);
-  const formattedAmountExpend = new Intl.NumberFormat("en-NG", {
+  const formattedAmountExpend = new Intl.NumberFormat("en-US", {
   style: "currency",
-  currency: "NGN",
+  currency: "USD",
   minimumFractionDigits: 2,
 }).format(totalExpend);
   return (

@@ -6,9 +6,9 @@ const Balance_ui = () => {
   const [showBalance, setShowBalance] = useState(true);
   const {first_Name , balance} = getCookie();
  
-    const formattedAmount = new Intl.NumberFormat("en-NG", {
+    const formattedAmount = new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "NGN",
+    currency: "USD",
     minimumFractionDigits: 2,
   }).format(balance);
   return (

@@ -13,9 +13,9 @@ const TransactionCard = ({item}) => {
   };
   const { day, month, time } = formatDateTime(item.createdAt);
   
-    const formattedAmount = new Intl.NumberFormat("en-NG", {
+    const formattedAmount = new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "NGN",
+    currency: "USD",
     minimumFractionDigits: 2,
   }).format(item.amount);
   return (
