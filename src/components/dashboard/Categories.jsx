@@ -20,7 +20,7 @@ const items = [
     ),
     color: "bg-[#FFF0F2]",
     icon: "icon/loan.svg",
-    // link: "/loan",
+    link: "/loan",
   },
   {
     title: (

@@ -12,9 +12,9 @@ export const TransactionRow = ({ item }) => {
   };
   const { day, month, time } = formatDateTime(item.createdAt);
 
-  const formattedAmount = new Intl.NumberFormat("en-US", {
+  const formattedAmount = new Intl.NumberFormat("en-NG", {
     style: "currency",
-    currency: "USD",
+    currency: "NGN",
     minimumFractionDigits: 2,
   }).format(item.amount);
 
